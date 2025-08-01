@@ -29,25 +29,25 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5" />
         <div className="relative container mx-auto px-6 py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              I Build Worlds,<br />Not Just Products.
+            <h1 className="text-5xl font-bold mb-6">
+              Hi, I'm a builder who loves solving hard problems
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              From planetary-scale AI agents to digital twins of cities, my work fuses intelligence, 
-              geography, learning, and code into living systems.
+              I work on GIS systems, AI tools, and educational platforms. Most of my projects start as 
+              solutions to problems I've personally faced, then grow into something others find useful too.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <Rocket className="mr-2 h-5 w-5" />
-                Explore Projects
+              <Button size="lg">
+                <Code className="mr-2 h-5 w-5" />
+                See My Work
               </Button>
               <Button variant="outline" size="lg">
                 <BookOpen className="mr-2 h-5 w-5" />
-                Read the Operating Manual
+                About My Process
               </Button>
               <Button variant="secondary" size="lg">
                 <Users className="mr-2 h-5 w-5" />
-                Work With Me
+                Let's Chat
               </Button>
             </div>
           </div>
@@ -58,8 +58,8 @@ const Index = () => {
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-xl text-muted-foreground">Living systems that push the boundaries of what's possible</p>
+            <h2 className="text-4xl font-bold mb-4">What I've Been Working On</h2>
+            <p className="text-xl text-muted-foreground">A few projects I'm particularly proud of</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -74,7 +74,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">TARDIS Maps</CardTitle>
                 <CardDescription className="text-base">
-                  World-Class GIS Engine - The geospatial backbone of my ecosystem
+                  A mapping engine I built because existing ones were too slow for what I needed
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -116,7 +116,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">Council of Nycea</CardTitle>
                 <CardDescription className="text-base">
-                  The Operating System for Knowledge + Decision-Making
+                  My attempt at building an AI that actually remembers our conversations
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -158,7 +158,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">EdTech Stack</CardTitle>
                 <CardDescription className="text-base">
-                  AI-first Education Toolkit with embedding-native curriculum
+                  Learning tools that adapt to how people actually learn, not how we think they should
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -200,7 +200,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">UAIP</CardTitle>
                 <CardDescription className="text-base">
-                  Unified Agent Intelligence Platform - 115+ Operational Flows
+                  The infrastructure that powers my AI projects (so I don't rebuild everything from scratch)
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -232,8 +232,8 @@ const Index = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Services</h2>
-            <p className="text-xl text-muted-foreground">Building living systems for forward-thinking organizations</p>
+            <h2 className="text-4xl font-bold mb-4">How I Can Help</h2>
+            <p className="text-xl text-muted-foreground">I work with teams who need custom solutions for complex problems</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -322,36 +322,36 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8">Philosophy</h2>
             <blockquote className="text-2xl font-light mb-8 text-muted-foreground italic">
-              "I build living systems, not static apps."
+              "I prefer building things that get better over time, not just work once."
             </blockquote>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 bg-primary/10 rounded-full mb-3">
                   <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2">Privacy-first</h4>
-                <p className="text-sm text-muted-foreground">Decentralization-aware</p>
+                <h4 className="font-semibold mb-2">Privacy matters</h4>
+                <p className="text-sm text-muted-foreground">Your data should be yours</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 bg-accent/10 rounded-full mb-3">
                   <Rocket className="h-6 w-6 text-accent" />
                 </div>
-                <h4 className="font-semibold mb-2">Brutally Fast</h4>
-                <p className="text-sm text-muted-foreground">Edge and core optimized</p>
+                <h4 className="font-semibold mb-2">Speed matters</h4>
+                <p className="text-sm text-muted-foreground">Nobody likes waiting</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 bg-secondary/10 rounded-full mb-3">
                   <Users className="h-6 w-6 text-secondary-foreground" />
                 </div>
-                <h4 className="font-semibold mb-2">Human-centered</h4>
-                <p className="text-sm text-muted-foreground">Designed for humans</p>
+                <h4 className="font-semibold mb-2">Simple is better</h4>
+                <p className="text-sm text-muted-foreground">Complex problems, simple solutions</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="p-3 bg-primary/10 rounded-full mb-3">
                   <Code className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-2">No gatekeeping</h4>
-                <p className="text-sm text-muted-foreground">Everything reproducible</p>
+                <h4 className="font-semibold mb-2">Open by default</h4>
+                <p className="text-sm text-muted-foreground">Share knowledge, not barriers</p>
               </div>
             </div>
           </div>
@@ -363,13 +363,13 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Target className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">Let's Build Something Extraordinary</h2>
+            <h2 className="text-4xl font-bold mb-6">Want to Work Together?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              I'm looking for co-founders, collaborators, and projects that need magic and rigor.
+              I'm always interested in meeting people working on interesting problems. Let's chat.
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Lightbulb className="mr-2 h-5 w-5" />
-              Let's Build Together
+              <Users className="mr-2 h-5 w-5" />
+              Get in Touch
             </Button>
           </div>
         </div>
