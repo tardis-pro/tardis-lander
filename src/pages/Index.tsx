@@ -30,20 +30,20 @@ const Index = () => {
         <div className="relative container mx-auto px-6 py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">
-              Hi, I'm a builder who loves solving hard problems
+              TARDIS: We solve hard problems with elegant code
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              I work on GIS systems, AI tools, and educational platforms. Most of my projects start as 
-              solutions to problems I've personally faced, then grow into something others find useful too.
+              We work on GIS systems, AI tools, and educational platforms. Most of our projects start as 
+              solutions to problems we've personally faced, then grow into something others find useful too.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg">
                 <Code className="mr-2 h-5 w-5" />
-                See My Work
+                See Our Work
               </Button>
               <Button variant="outline" size="lg">
                 <BookOpen className="mr-2 h-5 w-5" />
-                About My Process
+                About Our Process
               </Button>
               <Button variant="secondary" size="lg">
                 <Users className="mr-2 h-5 w-5" />
@@ -58,8 +58,8 @@ const Index = () => {
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What I've Been Working On</h2>
-            <p className="text-xl text-muted-foreground">A few projects I'm particularly proud of</p>
+            <h2 className="text-4xl font-bold mb-4">What We've Been Working On</h2>
+            <p className="text-xl text-muted-foreground">A few projects we're particularly proud of</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -74,7 +74,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">TARDIS Maps</CardTitle>
                 <CardDescription className="text-base">
-                  A mapping engine I built because existing ones were too slow for what I needed
+                  A mapping engine we built because existing ones were too slow for what we needed
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -116,7 +116,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">Council of Nycea</CardTitle>
                 <CardDescription className="text-base">
-                  My attempt at building an AI that actually remembers our conversations
+                  Our attempt at building an AI that actually remembers conversations
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -200,7 +200,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">UAIP</CardTitle>
                 <CardDescription className="text-base">
-                  The infrastructure that powers my AI projects (so I don't rebuild everything from scratch)
+                  The infrastructure that powers our AI projects (so we don't rebuild everything from scratch)
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -232,8 +232,8 @@ const Index = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">How I Can Help</h2>
-            <p className="text-xl text-muted-foreground">I work with teams who need custom solutions for complex problems</p>
+            <h2 className="text-4xl font-bold mb-4">How We Can Help</h2>
+            <p className="text-xl text-muted-foreground">We work with teams who need custom solutions for complex problems</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -322,7 +322,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8">Philosophy</h2>
             <blockquote className="text-2xl font-light mb-8 text-muted-foreground italic">
-              "I prefer building things that get better over time, not just work once."
+              "We prefer building things that get better over time, not just work once."
             </blockquote>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex flex-col items-center text-center">
@@ -363,9 +363,9 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Target className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">Want to Work Together?</h2>
+            <h2 className="text-4xl font-bold mb-6">Want to Work with TARDIS?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              I'm always interested in meeting people working on interesting problems. Let's chat.
+              We're always interested in meeting people working on interesting problems. Let's chat.
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               <Users className="mr-2 h-5 w-5" />
