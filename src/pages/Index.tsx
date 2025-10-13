@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import ContactForm from "@/components/ContactForm";
+import HeroThree from "@/components/HeroThree";
 import { 
   Globe, 
   Brain, 
@@ -23,52 +25,52 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <main role="main" className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5" />
+        <HeroThree keywords={["GIS","AI","EdTech","Routing","Digital Twins","MapLibre","Deck.gl","PostGIS"]} />
         <div className="relative container mx-auto px-6 py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">
-              TARDIS: We solve hard problems with elegant code
+            <h1 className="text-5xl font-bold mb-6 text-gradient">
+              GIS Development, AI Engineering, and EdTech Solutions
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              We work on GIS systems, AI tools, and educational platforms. Most of our projects start as 
-              solutions to problems we've personally faced, then grow into something others find useful too.
+              TARDIS Solutions is a development company focused on performant GIS systems, AI platforms, and adaptive learning products.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg">
-                <Code className="mr-2 h-5 w-5" />
-                See Our Work
-              </Button>
-              <Button variant="outline" size="lg">
-                <BookOpen className="mr-2 h-5 w-5" />
-                About Our Process
-              </Button>
-              <Button variant="secondary" size="lg">
-                <Users className="mr-2 h-5 w-5" />
-                Let's Chat
-              </Button>
+            <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
+              <a href="#contact">
+                <Button size="lg" className="btn-gradient" aria-label="Get in touch">
+                  <Users className="mr-2 h-5 w-5" />
+                  Get in Touch
+                </Button>
+              </a>
+              <a href="#work" aria-label="See our work">
+                <Button variant="outline" size="lg">
+                  <Code className="mr-2 h-5 w-5" />
+                  See Our Work
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-muted/50">
+      <section id="work" className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">What We've Been Working On</h2>
-            <p className="text-xl text-muted-foreground">A few projects we're particularly proud of</p>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">What We've Been Working On</h2>
+            <p className="text-xl text-muted-foreground">Recent work in GIS, AI, and EdTech</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* TARDIS Maps */}
-            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50 card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Map className="h-6 w-6 text-primary" />
+                  <div className="relative p-2 rounded-lg bg-primary/10 overflow-hidden">
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md" aria-hidden />
+                    <Map className="h-6 w-6 text-primary animate-float transition-transform group-hover:scale-110" />
                   </div>
                   <Badge variant="secondary">GIS Engine</Badge>
                 </div>
@@ -98,40 +100,47 @@ const Index = () => {
                   <Badge variant="outline">PostGIS</Badge>
                   <Badge variant="outline">TiTiler</Badge>
                 </div>
-                <Button variant="ghost" className="group/btn">
-                  Interactive Demo
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <a href="/maps">
+                  <Button variant="ghost" className="group/btn" aria-label="Explore TARDIS Maps">
+                    Explore TARDIS Maps
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
-            {/* Council of Nycea */}
-            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50">
+            {/* Navratna */}
+            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50 card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-accent/10 rounded-lg">
-                    <Brain className="h-6 w-6 text-accent" />
+                  <div className="relative p-2 rounded-lg bg-accent/10 overflow-hidden">
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 blur-md" aria-hidden />
+                    <Brain className="h-6 w-6 text-accent animate-float transition-transform group-hover:scale-110" />
                   </div>
                   <Badge variant="secondary">AI OS</Badge>
                 </div>
-                <CardTitle className="text-2xl">Council of Nycea</CardTitle>
+                <CardTitle className="text-2xl">Navratna</CardTitle>
                 <CardDescription className="text-base">
-                  Our attempt at building an AI that actually remembers conversations
+                  The vision of a system that becomes an extension of a developer’s instincts—intuitively understands patterns, autonomously responds to needs, and operates at an “ultra” level beyond conventional tools.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground mb-4">
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    Conversational interface with memory
+                    Intuitively understands developer patterns
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    Graph exploration & agents
+                    Autonomously responds to development needs
                   </li>
                   <li className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                    Autonomous tool linking
+                    Functions at an “ultra” level beyond conventional tools
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
+                    Becomes an extension of the developer’s instincts; anticipates and enhances the process
                   </li>
                 </ul>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -148,11 +157,12 @@ const Index = () => {
             </Card>
 
             {/* EdTech Stack */}
-            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50 card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-secondary/10 rounded-lg">
-                    <BookOpen className="h-6 w-6 text-secondary-foreground" />
+                  <div className="relative p-2 rounded-lg bg-secondary/10 overflow-hidden">
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md" aria-hidden />
+                    <BookOpen className="h-6 w-6 text-secondary-foreground animate-float transition-transform group-hover:scale-110" />
                   </div>
                   <Badge variant="secondary">EdTech</Badge>
                 </div>
@@ -190,11 +200,12 @@ const Index = () => {
             </Card>
 
             {/* UAIP */}
-            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-border hover:border-primary/50 card-hover">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <Cpu className="h-6 w-6 text-primary" />
+                  <div className="relative p-2 rounded-lg bg-primary/10 overflow-hidden">
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md" aria-hidden />
+                    <Cpu className="h-6 w-6 text-primary animate-float transition-transform group-hover:scale-110" />
                   </div>
                   <Badge variant="secondary">AI Platform</Badge>
                 </div>
@@ -232,8 +243,8 @@ const Index = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">How We Can Help</h2>
-            <p className="text-xl text-muted-foreground">We work with teams who need custom solutions for complex problems</p>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">GIS Development, AI Engineering, EdTech Solutions</h2>
+            <p className="text-xl text-muted-foreground">We build custom software for teams solving complex, data-heavy problems</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -320,7 +331,7 @@ const Index = () => {
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Philosophy</h2>
+            <h2 className="text-4xl font-bold mb-8 text-gradient">Philosophy</h2>
             <blockquote className="text-2xl font-light mb-8 text-muted-foreground italic">
               "We prefer building things that get better over time, not just work once."
             </blockquote>
@@ -358,23 +369,45 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 border-t">
+      {/* FAQ for SEO */}
+      <section className="py-24">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <Target className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">Want to Work with TARDIS?</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              We're always interested in meeting people working on interesting problems. Let's chat.
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Users className="mr-2 h-5 w-5" />
-              Get in Touch
-            </Button>
+          <div className="max-w-4xl mx-auto prose prose-slate dark:prose-invert">
+            <h2 className="text-4xl font-bold mb-8 text-center text-gradient">Frequently Asked Questions</h2>
+            <div className="space-y-6 text-muted-foreground">
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">What services does TARDIS Solutions provide?</h3>
+                <p>Custom GIS development (tiles, routing, digital twins), AI platforms and agent infrastructure, and adaptive EdTech tools.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">How do we start a project?</h3>
+                <p>Share a short brief via the contact form. We reply within one business day with scope, approach, and timelines.</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground">What industries do you work with?</h3>
+                <p>Companies, public sector teams, and mission-driven organizations working with maps, data, and learning systems.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Call to Action */}
+      <section id="contact" className="py-24 border-t">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <Target className="h-12 w-12 text-primary mx-auto mb-6" />
+            <h2 className="text-4xl font-bold mb-6">Want to Work with TARDIS Solutions?</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              We're always interested in meeting people working on interesting problems. Let's chat.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 

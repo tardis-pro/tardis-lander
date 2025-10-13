@@ -36,6 +36,17 @@ npm i
 npm run dev
 ```
 
+## Contact form
+
+- Preferred: set `VITE_FORMSPREE_ID` to your Formspree form ID. The app will POST JSON to `https://formspree.io/f/<id>`.
+- Alternative: set `VITE_CONTACT_ENDPOINT` to any HTTP endpoint that accepts JSON `{ name, email, company?, message }`.
+- Fallback: if neither is set, the form opens a `mailto:` with a prefilled message. Update the placeholder email in `src/components/ContactForm.tsx`.
+
+## SEO
+
+- `index.html` contains a meaningful `<title>`, `<meta name="description">`, Open Graph/Twitter tags, a canonical URL, and JSON-LD Organization schema.
+- Added `public/sitemap.xml` and referenced it from `public/robots.txt`.
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).

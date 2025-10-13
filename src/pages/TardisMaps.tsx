@@ -1,0 +1,223 @@
+import { useEffect } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import ContactForm from "@/components/ContactForm";
+import { Map, Search, Layers, BarChart3, Factory, Building2, Truck, CreditCard, Sprout } from "lucide-react";
+
+export default function TardisMaps() {
+  useEffect(() => {
+    document.title = "TARDIS Maps — Geo‑Intelligence at Planetary Scale | TARDIS Solutions";
+  }, []);
+
+  return (
+    <main role="main" className="min-h-screen bg-background text-foreground">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5" />
+        <div className="relative container mx-auto px-6 py-20">
+          <div className="max-w-4xl">
+            <Badge className="mb-4" variant="secondary">Product</Badge>
+            <h1 className="text-5xl font-bold mb-6 text-gradient">
+              TARDIS Maps — Search. Analyze. Act.
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              A new generation of geo‑intelligence designed to search, analyze, and act on geospatial data at planetary scale.
+              Not just visualization — a decision engine that fuses search, analytics, and simulation into one interface.
+            </p>
+            <div className="flex gap-3">
+              <a href="#contact"><Button size="lg" className="btn-gradient">Talk to Us</Button></a>
+              <a href="/#work"><Button size="lg" variant="outline">See More Work</Button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Capabilities */}
+      <section className="py-16">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="group card-hover">
+              <CardHeader>
+                <div className="relative w-fit mb-2">
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md rounded-md" aria-hidden />
+                  <Search className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+                </div>
+                <CardTitle>Search across anything</CardTitle>
+                <CardDescription>Full‑text + spatial search across layers and datasets.</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group card-hover">
+              <CardHeader>
+                <div className="relative w-fit mb-2">
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 blur-md rounded-md" aria-hidden />
+                  <Layers className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+                </div>
+                <CardTitle>Dynamic overlays</CardTitle>
+                <CardDescription>Satellite and vector overlays for any location.</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group card-hover">
+              <CardHeader>
+                <div className="relative w-fit mb-2">
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md rounded-md" aria-hidden />
+                  <BarChart3 className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+                </div>
+                <CardTitle>Industry analytics</CardTitle>
+                <CardDescription>Retail, finance, agriculture, infrastructure modules.</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="group card-hover">
+              <CardHeader>
+                <div className="relative w-fit mb-2">
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 blur-md rounded-md" aria-hidden />
+                  <Map className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+                </div>
+                <CardTitle>Built for builders</CardTitle>
+                <CardDescription>Integrates with PostGIS, DuckDB, MapLibre, Deck.gl.</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications */}
+      <section className="py-6">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-8 text-gradient">Applications</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-primary" />
+                  <Badge variant="outline">Retail</Badge>
+                </div>
+                <CardTitle>Retail Expansion Planning</CardTitle>
+                <CardDescription>Open stores where demand compounds.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-muted-foreground space-y-2">
+                  <li>Footfall analytics</li>
+                  <li>Demographic profiling</li>
+                  <li>Competitor mapping</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Truck className="h-5 w-5 text-primary" />
+                  <Badge variant="outline">Distribution</Badge>
+                </div>
+                <CardTitle>Distribution Planning</CardTitle>
+                <CardDescription>Find white‑space, analyze competitors, optimize channels.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-muted-foreground space-y-2">
+                  <li>White‑space detection</li>
+                  <li>Channel selection & retailer ID</li>
+                  <li>Beat‑plan design & monitoring</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <CreditCard className="h-5 w-5 text-primary" />
+                  <Badge variant="outline">Banking</Badge>
+                </div>
+                <CardTitle>Risk Analytics for Banks</CardTitle>
+                <CardDescription>Lend smarter with geospatial clarity.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-muted-foreground space-y-2">
+                  <li>Credit‑risk mapping</li>
+                  <li>Fraud hotspot detection</li>
+                  <li>Disaster vulnerability models</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Sprout className="h-5 w-5 text-primary" />
+                  <Badge variant="outline">Agriculture</Badge>
+                </div>
+                <CardTitle>Remote Sensing‑Based Agri Analytics</CardTitle>
+                <CardDescription>AI‑powered crop intelligence.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-muted-foreground space-y-2">
+                  <li>Crop identification</li>
+                  <li>Health & soil‑quality monitoring</li>
+                  <li>Land‑use & yield mapping</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-16">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <h2 className="text-3xl font-bold mb-6 text-gradient">Services</h2>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[240px]">Category</TableHead>
+                <TableHead>What We Deliver</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">GIS Data Management</TableCell>
+                <TableCell>End‑to‑end spatial data pipelines — cleaning, versioning, and hosting for enterprise use.</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">GIS Data Processing</TableCell>
+                <TableCell>Automated ETL workflows for raster, vector, and 3D datasets with cloud‑native scaling.</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Application Development</TableCell>
+                <TableCell>Full‑stack web & mobile GIS apps using MapLibre, Deck.gl, and Three.js.</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Remote Sensing Services</TableCell>
+                <TableCell>Satellite + drone imagery analysis for agriculture, forestry, and infrastructure.</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Image Processing Services</TableCell>
+                <TableCell>Feature extraction, orthomosaic correction, and ML‑based classification pipelines.</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </section>
+
+      {/* Search‑First */}
+      <section className="py-6">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold mb-4 text-gradient">Search‑First Experience</h2>
+          <p className="text-muted-foreground text-lg">
+            Your map isn’t just a canvas — it’s a queryable database. Search anything — a village, a building, a store type, a risk zone — and
+            TARDIS Maps will find, rank, and visualize it in milliseconds.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-16 border-t">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-6 text-center">Talk to Us</h2>
+          <p className="text-center text-muted-foreground mb-8">Tell us about your geospatial challenge. We typically respond within one business day.</p>
+          <ContactForm />
+        </div>
+      </section>
+    </main>
+  );
+}
