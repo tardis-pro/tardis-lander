@@ -8,7 +8,7 @@ import { Map, Search, Layers, BarChart3, Factory, Building2, Truck, CreditCard, 
 
 export default function TardisMaps() {
   useEffect(() => {
-    document.title = "TARDIS Maps — Geo‑Intelligence at Planetary Scale | TARDIS Solutions";
+    document.title = "TARDIS Maps - Geo‑Intelligence at Planetary Scale | TARDIS Solutions";
   }, []);
 
   return (
@@ -20,11 +20,10 @@ export default function TardisMaps() {
           <div className="max-w-4xl">
             <Badge className="mb-4" variant="secondary">Product</Badge>
             <h1 className="text-5xl font-bold mb-6 text-gradient">
-              TARDIS Maps — Search. Analyze. Act.
+              TARDIS Maps - The Mapping Platform That Thinks Like a Database
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              A new generation of geo‑intelligence designed to search, analyze, and act on geospatial data at planetary scale.
-              Not just visualization — a decision engine that fuses search, analytics, and simulation into one interface.
+              Instead of panning and zooming through billions of features, just search. TARDIS Maps treats your entire geospatial stack as a queryable index - find locations, analyze patterns, and run scenarios without writing SQL.
             </p>
             <div className="flex gap-3">
               <a href="#contact"><Button size="lg" className="btn-gradient">Talk to Us</Button></a>
@@ -44,8 +43,8 @@ export default function TardisMaps() {
                   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md rounded-md" aria-hidden />
                   <Search className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
                 </div>
-                <CardTitle>Search across anything</CardTitle>
-                <CardDescription>Full‑text + spatial search across layers and datasets.</CardDescription>
+                <CardTitle>Search, Don't Scroll</CardTitle>
+                <CardDescription>Type "coffee shops near parks in Seattle" and get ranked results instantly. Full-text + spatial queries without writing PostGIS code.</CardDescription>
               </CardHeader>
             </Card>
             <Card className="group card-hover">
@@ -54,8 +53,8 @@ export default function TardisMaps() {
                   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 blur-md rounded-md" aria-hidden />
                   <Layers className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
                 </div>
-                <CardTitle>Dynamic overlays</CardTitle>
-                <CardDescription>Satellite and vector overlays for any location.</CardDescription>
+                <CardTitle>Live Satellite + Vector Layers</CardTitle>
+                <CardDescription>Stream Sentinel-2, Landsat, and custom rasters in real-time. Overlay with OpenStreetMap, cadastral, or proprietary vector data.</CardDescription>
               </CardHeader>
             </Card>
             <Card className="group card-hover">
@@ -64,8 +63,8 @@ export default function TardisMaps() {
                   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 blur-md rounded-md" aria-hidden />
                   <BarChart3 className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
                 </div>
-                <CardTitle>Industry analytics</CardTitle>
-                <CardDescription>Retail, finance, agriculture, infrastructure modules.</CardDescription>
+                <CardTitle>Pre-Built Industry Modules</CardTitle>
+                <CardDescription>Retail site selection, agricultural yield prediction, infrastructure risk modeling - templates you can customize instead of building from scratch.</CardDescription>
               </CardHeader>
             </Card>
             <Card className="group card-hover">
@@ -74,8 +73,8 @@ export default function TardisMaps() {
                   <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fuchsia-500/20 to-cyan-500/20 blur-md rounded-md" aria-hidden />
                   <Map className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
                 </div>
-                <CardTitle>Built for builders</CardTitle>
-                <CardDescription>Integrates with PostGIS, DuckDB, MapLibre, Deck.gl.</CardDescription>
+                <CardTitle>Built for Developers</CardTitle>
+                <CardDescription>RESTful APIs, WebSocket streams, and embeddable widgets. Works with your existing PostGIS, DuckDB, or Snowflake stack.</CardDescription>
               </CardHeader>
             </Card>
           </div>
@@ -176,7 +175,7 @@ export default function TardisMaps() {
             <TableBody>
               <TableRow>
                 <TableCell className="font-medium">GIS Data Management</TableCell>
-                <TableCell>End‑to‑end spatial data pipelines — cleaning, versioning, and hosting for enterprise use.</TableCell>
+                <TableCell>End‑to‑end spatial data pipelines - cleaning, versioning, and hosting for enterprise use.</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">GIS Data Processing</TableCell>
@@ -200,13 +199,53 @@ export default function TardisMaps() {
       </section>
 
       {/* Search‑First */}
-      <section className="py-6">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl font-bold mb-4 text-gradient">Search‑First Experience</h2>
-          <p className="text-muted-foreground text-lg">
-            Your map isn’t just a canvas — it’s a queryable database. Search anything — a village, a building, a store type, a risk zone — and
-            TARDIS Maps will find, rank, and visualize it in milliseconds.
-          </p>
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <h2 className="text-3xl font-bold mb-6 text-gradient text-center">Why Search-First Matters</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-3">Traditional GIS Tools</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive mt-1">×</span>
+                  <span>Load all layers before you can interact</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive mt-1">×</span>
+                  <span>Pan and zoom to find what you need</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive mt-1">×</span>
+                  <span>Write complex SQL for spatial queries</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive mt-1">×</span>
+                  <span>Slow with billions of features</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3">TARDIS Maps</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Type what you want, get instant results</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Full-text + spatial search in one query</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Natural language → ranked results</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Sub-second response at any scale</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

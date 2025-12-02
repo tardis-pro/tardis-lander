@@ -19,7 +19,7 @@ export default function HeroThree({
     "MapLibre",
     "Deck.gl",
   ],
-  accentColor = "#22d3ee",
+  accentColor = "#3b82f6",
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -39,7 +39,7 @@ export default function HeroThree({
         "https://unpkg.com/three@0.160.0/build/three.module.js"
       );
 
-      function makeLabelSprite(text: string, colorA = "#22d3ee", colorB = "#a78bfa") {
+      function makeLabelSprite(text: string, colorA = "#3b82f6", colorB = "#1e40af") {
         const canvas = document.createElement("canvas");
         canvas.width = 512;
         canvas.height = 256;

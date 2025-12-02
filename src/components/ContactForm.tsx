@@ -57,7 +57,7 @@ export default function ContactForm() {
             email: values.email,
             company: values.company,
             message: values.message,
-            _subject: "TARDIS Solutions — New inquiry",
+            _subject: "TARDIS Solutions - New inquiry",
           }),
         });
         if (!res.ok) throw new Error("Failed to submit form");
@@ -67,11 +67,11 @@ export default function ContactForm() {
       }
 
       // Fallback: open mailto with prefilled subject/body
-      const subject = encodeURIComponent("TARDIS Solutions — New inquiry");
+      const subject = encodeURIComponent("TARDIS Solutions - New inquiry");
       const body = encodeURIComponent(
         `Name: ${values.name}\nEmail: ${values.email}\nCompany: ${values.company || "-"}\n\n${values.message}`
       );
-      window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:hello@tardis.digital?subject=${subject}&body=${body}`;
       toast.info("Opening your email client to send the message");
     } catch (err) {
       console.error(err);
