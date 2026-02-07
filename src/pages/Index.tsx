@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContactForm from "@/components/ContactForm";
 import Hyperspeed from "@/components/Hyperspeed";
+import { offeringList } from "./offerings/content";
 import {
   Globe,
   Brain,
@@ -26,6 +27,14 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const coreOfferingSlugs = new Set([
+    "production-gravity",
+    "failure-first-architecture",
+    "security-without-theater",
+  ]);
+
+  const expandedOfferings = offeringList.filter((offering) => !coreOfferingSlugs.has(offering.slug));
+
   return (
     <main role="main" className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -409,6 +418,38 @@ const Index = () => {
                 </a>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 border-t bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Specialized Spatial & Data Offerings</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Diagnostic, boundary, risk, and geospatial decision services for teams that need crisp answers before costly commitments.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {expandedOfferings.map((offering) => (
+              <Card key={offering.slug} className="card-hover h-full border-primary/20">
+                <CardHeader>
+                  <Badge variant="secondary" className="w-fit">{offering.serviceType}</Badge>
+                  <CardTitle className="text-2xl">{offering.name}</CardTitle>
+                  <CardDescription className="text-base">{offering.shortName}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col gap-4">
+                  <p className="text-sm text-muted-foreground">{offering.metaDescription}</p>
+                  <a href={`/offerings/${offering.slug}`} aria-label={`Explore ${offering.name}`}>
+                    <Button variant="ghost" className="group p-0 h-auto text-primary">
+                      Explore {offering.name}
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
