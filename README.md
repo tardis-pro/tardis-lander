@@ -39,7 +39,7 @@ npm run dev
 ## Contact form
 
 - Preferred: set `VITE_FORMSPREE_ID` to your Formspree form ID. The app will POST JSON to `https://formspree.io/f/<id>`.
-- Alternative: set `VITE_CONTACT_ENDPOINT` to any HTTP endpoint that accepts JSON `{ name, email, company?, message }`.
+- Alternative: set `VITE_CONTACT_ENDPOINT` to any HTTP endpoint that accepts JSON with contact and scheduling fields: `{ name, email, company?, preferredDay, preferredTimeRange, alternateSlotOne, alternateSlotTwo, alternateSlotThree?, timezone, message }`.
 - Fallback: if neither is set, the form opens a `mailto:` with a prefilled message. Update the placeholder email in `src/components/ContactForm.tsx`.
 
 ## SEO
