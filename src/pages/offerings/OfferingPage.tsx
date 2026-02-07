@@ -65,9 +65,7 @@ export default function OfferingPage({ offering }: Props) {
   const sentScrollThresholds = useRef<Set<number>>(new Set());
 
   const pageUrl = `${DOMAIN}/offerings/${offering.slug}`;
-  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
-  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
-  const primaryCtaHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "/#contact");
+  const primaryCtaHref = "#offering-footer";
 
   const heroGradientClass = useMemo(() => {
     if (offering.slug === "production-gravity") {
@@ -642,7 +640,7 @@ export default function OfferingPage({ offering }: Props) {
         </div>
       </section>
 
-      <footer className="border-t bg-muted/30">
+      <footer id="offering-footer" className="border-t bg-muted/30">
         <div className="container mx-auto px-6 py-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-semibold">{offering.name}</p>

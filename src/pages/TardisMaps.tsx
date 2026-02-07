@@ -7,9 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import { Map, Search, Layers, BarChart3, Factory, Building2, Truck, CreditCard, Sprout } from "lucide-react";
 
 export default function TardisMaps() {
-  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
-  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
-  const primaryContactHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "#contact");
+  const primaryContactHref = "#contact";
 
   useEffect(() => {
     document.title = "TARDIS Maps - Geo‑Intelligence at Planetary Scale | TARDIS Solutions";

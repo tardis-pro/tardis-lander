@@ -27,9 +27,7 @@ import {
 } from "lucide-react";
 
 const Index = () => {
-  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
-  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
-  const primaryContactHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "#contact");
+  const primaryContactHref = "#contact";
 
   const coreOfferingSlugs = new Set([
     "production-gravity",
