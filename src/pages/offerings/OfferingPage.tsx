@@ -133,14 +133,48 @@ export default function OfferingPage({ offering }: Props) {
     [offering.faqs]
   );
 
+  const breadcrumbSchema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: DOMAIN,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Offerings",
+          item: `${DOMAIN}/#work`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: offering.name,
+          item: pageUrl,
+        },
+      ],
+    }),
+    [offering.name, pageUrl]
+  );
+
   useEffect(() => {
     document.title = offering.metaTitle;
     upsertMetaTag("name", "description", offering.metaDescription);
+    upsertMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large");
     upsertMetaTag("property", "og:title", offering.metaTitle);
     upsertMetaTag("property", "og:description", offering.metaDescription);
+    upsertMetaTag("property", "og:type", "website");
+    upsertMetaTag("property", "og:site_name", "Tardis");
     upsertMetaTag("property", "og:url", pageUrl);
+    upsertMetaTag("property", "og:image", `${DOMAIN}/placeholder.svg`);
     upsertMetaTag("name", "twitter:title", offering.metaTitle);
     upsertMetaTag("name", "twitter:description", offering.metaDescription);
+    upsertMetaTag("name", "twitter:card", "summary_large_image");
+    upsertMetaTag("name", "twitter:image", `${DOMAIN}/placeholder.svg`);
     upsertMetaTag("name", "keywords", offering.seoKeywords.join(", "));
     upsertCanonical(pageUrl);
   }, [offering.metaDescription, offering.metaTitle, offering.seoKeywords, pageUrl]);
@@ -237,6 +271,7 @@ export default function OfferingPage({ offering }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <a
         href="#offering-content"
