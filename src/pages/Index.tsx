@@ -343,6 +343,76 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold mb-4 text-gradient">14-Day Founder Offerings</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Three fixed-scope engagements for teams that need production, resilience, and security outcomes without consulting drag.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <Card className="card-hover h-full border-primary/30">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Production Infrastructure</Badge>
+                <CardTitle>Production Gravity</CardTitle>
+                <CardDescription className="text-base">
+                  Production-ready infrastructure in 14 days. Fixed price. Clear handover.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-4">
+                <p className="text-sm text-muted-foreground">For startups launching soon that need stability without slowing product momentum.</p>
+                <a href="/offerings/production-gravity" aria-label="Explore Production Gravity">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Explore Production Gravity
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/30">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Reliability Engineering</Badge>
+                <CardTitle>Failure-First Architecture</CardTitle>
+                <CardDescription className="text-base">
+                  Build systems that fail safely, recover quickly, and protect launch-day trust.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-4">
+                <p className="text-sm text-muted-foreground">For teams that want fewer incidents and faster recovery under pressure.</p>
+                <a href="/offerings/failure-first-architecture" aria-label="Explore Failure-First Architecture">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Explore Failure-First Architecture
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/30">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">DevSecOps</Badge>
+                <CardTitle>Security Without The Theater</CardTitle>
+                <CardDescription className="text-base">
+                  Security controls that support shipping velocity and compliance readiness.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-4">
+                <p className="text-sm text-muted-foreground">For teams handling customer security pressure while still moving quickly.</p>
+                <a href="/offerings/security-without-theater" aria-label="Explore Security Without The Theater">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Explore Security Without The Theater
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Philosophy */}
       <section className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">

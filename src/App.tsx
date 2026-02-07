@@ -1,3 +1,4 @@
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +8,8 @@ import Index from "./pages/Index";
 import TardisMaps from "./pages/TardisMaps";
 import NotFound from "./pages/NotFound";
 
+const OfferingsRouter = lazy(() => import("./pages/OfferingsRouter"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -15,12 +18,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/maps" element={<TardisMaps />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen bg-background" />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/maps" element={<TardisMaps />} />
+            <Route path="/offerings/:slug" element={<OfferingsRouter />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
