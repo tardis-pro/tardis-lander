@@ -27,6 +27,10 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
+  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+  const primaryContactHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "#contact");
+
   const coreOfferingSlugs = new Set([
     "production-gravity",
     "failure-first-architecture",
@@ -51,7 +55,7 @@ const Index = () => {
               TARDIS Solutions helps teams turn complex spatial data, AI workflows, and learning systems into production-ready products. We write the infrastructure so you can focus on your domain.
             </p>
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
-              <a href="#contact">
+              <a href={primaryContactHref}>
                 <Button size="lg" className="btn-gradient" aria-label="Get in touch">
                   <Users className="mr-2 h-5 w-5" />
                   Get in Touch
@@ -636,6 +640,23 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <footer className="border-t bg-muted/30">
+        <div className="container mx-auto px-6 py-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-semibold">TARDIS Solutions</p>
+            <p className="text-sm text-muted-foreground">GIS, AI, and product engineering for hard problems.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <a href={primaryContactHref}>
+              <Button className="btn-gradient" aria-label="Book a scheduling call">Book a scheduling call</Button>
+            </a>
+            <a href="mailto:hello@tardis.digital">
+              <Button variant="outline" aria-label="Email TARDIS Solutions">hello@tardis.digital</Button>
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };

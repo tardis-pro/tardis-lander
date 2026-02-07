@@ -7,6 +7,10 @@ import ContactForm from "@/components/ContactForm";
 import { Map, Search, Layers, BarChart3, Factory, Building2, Truck, CreditCard, Sprout } from "lucide-react";
 
 export default function TardisMaps() {
+  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
+  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+  const primaryContactHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "#contact");
+
   useEffect(() => {
     document.title = "TARDIS Maps - Geo‑Intelligence at Planetary Scale | TARDIS Solutions";
   }, []);
@@ -26,7 +30,7 @@ export default function TardisMaps() {
               Instead of panning and zooming through billions of features, just search. TARDIS Maps treats your entire geospatial stack as a queryable index - find locations, analyze patterns, and run scenarios without writing SQL.
             </p>
             <div className="flex gap-3">
-              <a href="#contact"><Button size="lg" className="btn-gradient">Talk to Us</Button></a>
+              <a href={primaryContactHref}><Button size="lg" className="btn-gradient">Talk to Us</Button></a>
               <a href="/#work"><Button size="lg" variant="outline">See More Work</Button></a>
             </div>
           </div>
@@ -257,6 +261,23 @@ export default function TardisMaps() {
           <ContactForm />
         </div>
       </section>
+
+      <footer className="border-t bg-muted/30">
+        <div className="container mx-auto px-6 py-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-semibold">TARDIS Maps</p>
+            <p className="text-sm text-muted-foreground">Search-first geospatial intelligence platform.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <a href={primaryContactHref}>
+              <Button className="btn-gradient" aria-label="Book a scheduling call">Book a scheduling call</Button>
+            </a>
+            <a href="mailto:hello@tardis.digital">
+              <Button variant="outline" aria-label="Email TARDIS Solutions">hello@tardis.digital</Button>
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

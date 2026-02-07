@@ -36,6 +36,8 @@ type FormValues = z.infer<typeof schema>;
 export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const minDate = new Date().toISOString().slice(0, 10);
+  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+  const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -57,9 +59,6 @@ export default function ContactForm() {
   async function onSubmit(values: FormValues) {
     try {
       setSubmitting(true);
-      const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | 'mnngoovr';
-      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT as string | 'undefined';
-
       // drop if honeypot filled
       if (values.website) {
         console.warn("Honeypot triggered; aborting submission");

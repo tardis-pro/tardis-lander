@@ -65,6 +65,9 @@ export default function OfferingPage({ offering }: Props) {
   const sentScrollThresholds = useRef<Set<number>>(new Set());
 
   const pageUrl = `${DOMAIN}/offerings/${offering.slug}`;
+  const formspreeFormUrl = import.meta.env.VITE_FORMSPREE_FORM_URL as string | undefined;
+  const formspreeId = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
+  const primaryCtaHref = formspreeFormUrl || (formspreeId ? `https://formspree.io/f/${formspreeId}` : "/#contact");
 
   const heroGradientClass = useMemo(() => {
     if (offering.slug === "production-gravity") {
@@ -290,7 +293,7 @@ export default function OfferingPage({ offering }: Props) {
             <h1 className="text-4xl font-bold leading-tight md:text-5xl">{offering.heroHeading}</h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{offering.heroLead}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="/#contact" onClick={() => onPrimaryCtaClick("hero")}> 
+              <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("hero")}> 
                 <Button size="lg" className="btn-gradient min-h-11 min-w-44" aria-label="Book your free discovery call">
                   Book Your Free Discovery Call
                 </Button>
@@ -378,7 +381,7 @@ export default function OfferingPage({ offering }: Props) {
             ))}
           </div>
           <div className="mt-10">
-            <a href="/#contact" onClick={() => onPrimaryCtaClick("mid_page")}> 
+            <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("mid_page")}> 
               <Button size="lg" className="btn-gradient min-h-11" aria-label="Start your 14 day transformation">
                 Start Your 14-Day Transformation
               </Button>
@@ -513,7 +516,7 @@ export default function OfferingPage({ offering }: Props) {
             ))}
           </div>
           <div className="mt-10">
-            <a href="/#contact" onClick={() => onPrimaryCtaClick("comparison")}> 
+            <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("comparison")}> 
               <Button size="lg" className="btn-gradient min-h-11" aria-label="See if you are a fit">
                 See If You're a Fit
               </Button>
@@ -622,7 +625,7 @@ export default function OfferingPage({ offering }: Props) {
             If your launch window is tight, this is the fastest way to reduce risk without losing product velocity.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="/#contact" onClick={() => onPrimaryCtaClick("final")}> 
+            <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("final")}> 
               <Button size="lg" className="btn-gradient min-h-11 min-w-44" aria-label="Book your free discovery call">
                 Book Your Free Discovery Call
               </Button>
@@ -638,6 +641,23 @@ export default function OfferingPage({ offering }: Props) {
           </div>
         </div>
       </section>
+
+      <footer className="border-t bg-muted/30">
+        <div className="container mx-auto px-6 py-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-semibold">{offering.name}</p>
+            <p className="text-sm text-muted-foreground">Fixed-scope delivery with decision-ready outcomes.</p>
+          </div>
+          <div className="flex items-center gap-3">
+            <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("footer")}>
+              <Button className="btn-gradient" aria-label="Book a scheduling call">Book a scheduling call</Button>
+            </a>
+            <a href="mailto:hello@tardis.digital" onClick={() => onSecondaryCtaClick("footer")}>
+              <Button variant="outline" aria-label="Email Tardis">hello@tardis.digital</Button>
+            </a>
+          </div>
+        </div>
+      </footer>
 
       {showExitIntent ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
@@ -689,9 +709,9 @@ export default function OfferingPage({ offering }: Props) {
           <div className="flex items-center justify-between gap-3">
             <p className="text-sm text-muted-foreground">Still here? Compare this offering against your current setup.</p>
             <div className="flex items-center gap-2">
-              <Link to="/#contact" onClick={() => onPrimaryCtaClick("mobile_nudge")}> 
+              <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("mobile_nudge")}>
                 <Button size="sm">Talk to us</Button>
-              </Link>
+              </a>
               <button
                 type="button"
                 onClick={() => setShowMobileNudge(false)}
