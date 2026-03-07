@@ -73,17 +73,17 @@ const baseFaqs: OfferingFaq[] = [
   {
     question: "What's included in the 14-day timeline?",
     answer:
-      "Days 1-2: discovery and risk mapping. Days 3-11: implementation and integration. Days 12-14: tests, runbooks, and handoff.",
+      "Days 1-2 focus on discovery, architecture lock, and risk mapping. Days 3-11 are dedicated to implementation and integration. Days 12-14 cover reliability validation, runbooks, and a full handoff session so your team can operate the stack without external dependency.",
   },
   {
     question: "What if we're not on AWS?",
     answer:
-      "We work with GCP, Azure, DigitalOcean, Vercel, Railway, and self-hosted stacks. The playbook stays the same, tools adapt.",
+      "We regularly deliver on GCP, Azure, DigitalOcean, Vercel, Railway, and self-hosted stacks. The engineering playbook remains stable while the implementation details adapt to your infrastructure, compliance constraints, and internal platform standards.",
   },
   {
     question: "Do we need engineers available?",
     answer:
-      "Yes, 2-4 hours across two weeks for alignment, access, and transfer. We do not block your delivery roadmap.",
+      "Yes. We usually need 2-4 hours across two weeks for access, architecture alignment, and handoff checkpoints. The engagement is designed to protect your roadmap by minimizing interrupts while still keeping your team fully informed and in control.",
   },
 ];
 

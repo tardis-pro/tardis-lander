@@ -251,6 +251,27 @@ export default function TardisMaps() {
         </div>
       </section>
 
+      <section className="py-16">
+        <div className="container mx-auto px-6 max-w-5xl space-y-8">
+          <article className="rounded-lg border bg-card p-6">
+            <h2 className="text-3xl font-bold mb-4">What is search-first mapping?</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Search-first mapping is a geospatial approach where users query spatial data with natural language instead of manually panning and
+              zooming through layers. The platform treats maps as a queryable index and returns ranked results quickly across vector, raster,
+              and satellite datasets, so teams can answer location questions faster and with less analyst overhead.
+            </p>
+          </article>
+          <article className="rounded-lg border bg-card p-6">
+            <h2 className="text-3xl font-bold mb-4">How does TARDIS Maps compare to traditional GIS workflows?</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Traditional GIS workflows often require manual layer loading, interface navigation, and custom SQL before teams get actionable
+              output. TARDIS Maps emphasizes query-first workflows that combine full-text retrieval with spatial operations, reducing time to
+              insight for field operations, risk analysis, and planning teams.
+            </p>
+          </article>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-16 border-t">
         <div className="container mx-auto px-6 max-w-3xl">

@@ -1,0 +1,31 @@
+# TARDIS Solutions
+
+> TARDIS Solutions builds production-ready GIS systems, AI orchestration platforms, and adaptive learning tools for teams solving complex spatial, intelligence, and education problems.
+
+## Products
+- [TARDIS Maps](https://tardis.digital/maps): Search-first geospatial intelligence platform with full-text plus spatial retrieval.
+- [Navratna](https://github.com/tardis-pro/navratna): Multi-agent AI orchestration with memory, routing, and deployment workflows.
+- [Scribe](https://github.com/tardis-pro/scribe): Content and document pipeline tooling for engineering teams.
+- [TARDIS Music](https://music.tardis.digital): Media property in the wider TARDIS ecosystem.
+
+## Services
+- [Production Gravity](https://tardis.digital/offerings/production-gravity): 14-day production infrastructure sprint.
+- [Failure-First Architecture](https://tardis.digital/offerings/failure-first-architecture): Reliability-first delivery for launch-critical systems.
+- [Security Without Theater](https://tardis.digital/offerings/security-without-theater): Practical DevSecOps implementation.
+
+## Compare and Research
+- [Compare Index](https://tardis.digital/compare)
+- [Case Studies](https://tardis.digital/case-studies)
+- [Glossary](https://tardis.digital/glossary)
+- [Resources](https://tardis.digital/resources)
+
+## Ecosystem
+- [pronit.in](https://pronit.in)
+- [work.pronit.in](https://work.pronit.in)
+- [leads.pronit.in](https://leads.pronit.in)
+- [dreams.pronit.in](https://dreams.pronit.in)
+- [mirror.pronit.in](https://mirror.pronit.in)
+
+## Contact
+- Email: hello@tardis.digital
+- Website: https://tardis.digital

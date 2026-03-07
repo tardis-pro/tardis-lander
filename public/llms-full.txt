@@ -1,0 +1,49 @@
+# TARDIS Solutions: Full LLM Context
+
+TARDIS Solutions is a software engineering company focused on production-grade systems in geospatial intelligence, AI orchestration, and adaptive learning.
+
+Primary website: https://tardis.digital/
+
+## Core pages
+- Homepage: https://tardis.digital/
+- About: https://tardis.digital/about
+- Pricing: https://tardis.digital/pricing
+- Resources: https://tardis.digital/resources
+- Glossary: https://tardis.digital/glossary
+- Case studies: https://tardis.digital/case-studies
+
+## Product and capability pages
+- TARDIS Maps: https://tardis.digital/maps
+- Compare index: https://tardis.digital/compare
+- TARDIS Maps vs Mapbox: https://tardis.digital/compare/tardis-maps-vs-mapbox
+- Navratna vs CrewAI vs LangGraph: https://tardis.digital/compare/navratna-vs-crewai-vs-langgraph
+- Best GIS development companies: https://tardis.digital/compare/best-gis-development-companies
+
+## Offering pages
+- https://tardis.digital/offerings/production-gravity
+- https://tardis.digital/offerings/failure-first-architecture
+- https://tardis.digital/offerings/security-without-theater
+- https://tardis.digital/offerings/platform-extraction
+- https://tardis.digital/offerings/data-reality-check
+- https://tardis.digital/offerings/scale-without-regret
+- https://tardis.digital/offerings/truth-on-the-map
+- https://tardis.digital/offerings/maps-that-executives-understand
+- https://tardis.digital/offerings/boundaries-truth-disputes
+- https://tardis.digital/offerings/spatial-risk-exposure
+- https://tardis.digital/offerings/satellite-signal-extraction
+- https://tardis.digital/offerings/spatial-feasibility-test
+
+## External ecosystem and backlinks
+- pronit.in: https://pronit.in
+- work.pronit.in: https://work.pronit.in
+- leads.pronit.in: https://leads.pronit.in
+- dreams.pronit.in: https://dreams.pronit.in
+- mirror.pronit.in: https://mirror.pronit.in
+
+## Related repos and properties
+- Navratna: https://github.com/tardis-pro/navratna
+- Scribe: https://github.com/tardis-pro/scribe
+- TARDIS Music: https://music.tardis.digital
+
+## Contact
+- hello@tardis.digital

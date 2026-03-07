@@ -81,7 +81,7 @@ export default function OfferingPage({ offering }: Props) {
     () => ({
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "Tardis",
+      name: "TARDIS Solutions",
       url: DOMAIN,
       logo: `${DOMAIN}/favicon.ico`,
       description: "Fast, decisive infrastructure, reliability, and security outcomes for early-stage startups.",
@@ -90,7 +90,7 @@ export default function OfferingPage({ offering }: Props) {
         "@type": "PostalAddress",
         addressCountry: "IN",
       },
-      sameAs: ["https://twitter.com/tardisdev", "https://linkedin.com/company/tardisdev"],
+      sameAs: ["https://twitter.com/tardisdev", "https://in.linkedin.com/company/tardis-digital", "https://github.com/tardis-pro"],
     }),
     []
   );
@@ -103,7 +103,7 @@ export default function OfferingPage({ offering }: Props) {
       description: offering.heroLead,
       provider: {
         "@type": "Organization",
-        name: "Tardis",
+        name: "TARDIS Solutions",
       },
       areaServed: "Worldwide",
       serviceType: offering.serviceType,
@@ -116,22 +116,6 @@ export default function OfferingPage({ offering }: Props) {
       url: pageUrl,
     }),
     [offering, pageUrl]
-  );
-
-  const faqSchema = useMemo(
-    () => ({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: offering.faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    }),
-    [offering.faqs]
   );
 
   const breadcrumbSchema = useMemo(
@@ -169,13 +153,13 @@ export default function OfferingPage({ offering }: Props) {
     upsertMetaTag("property", "og:title", offering.metaTitle);
     upsertMetaTag("property", "og:description", offering.metaDescription);
     upsertMetaTag("property", "og:type", "website");
-    upsertMetaTag("property", "og:site_name", "Tardis");
+    upsertMetaTag("property", "og:site_name", "TARDIS Solutions");
     upsertMetaTag("property", "og:url", pageUrl);
-    upsertMetaTag("property", "og:image", `${DOMAIN}/placeholder.svg`);
+    upsertMetaTag("property", "og:image", `${DOMAIN}/og-image.svg`);
     upsertMetaTag("name", "twitter:title", offering.metaTitle);
     upsertMetaTag("name", "twitter:description", offering.metaDescription);
     upsertMetaTag("name", "twitter:card", "summary_large_image");
-    upsertMetaTag("name", "twitter:image", `${DOMAIN}/placeholder.svg`);
+    upsertMetaTag("name", "twitter:image", `${DOMAIN}/og-image.svg`);
     upsertMetaTag("name", "keywords", offering.seoKeywords.join(", "));
     upsertCanonical(pageUrl);
   }, [offering.metaDescription, offering.metaTitle, offering.seoKeywords, pageUrl]);
@@ -271,7 +255,6 @@ export default function OfferingPage({ offering }: Props) {
     <main role="main" className="min-h-screen bg-background text-foreground">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <a

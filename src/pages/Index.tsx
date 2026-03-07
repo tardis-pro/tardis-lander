@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import ContactForm from "@/components/ContactForm";
 import Hyperspeed from "@/components/Hyperspeed";
 import { offeringList } from "./offerings/content";
+import { useEffect } from "react";
 import {
   Globe,
   Brain,
@@ -27,6 +28,10 @@ import {
 } from "lucide-react";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "TARDIS Solutions - GIS, AI, and EdTech Development Company";
+  }, []);
+
   const primaryContactHref = "#contact";
 
   const coreOfferingSlugs = new Set([
@@ -635,6 +640,36 @@ const Index = () => {
           </div>
           <div className="max-w-3xl mx-auto">
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30 border-t">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-bold mb-4 text-gradient">Explore</h2>
+              <div className="flex flex-wrap gap-3 text-sm">
+                <a href="/about" className="text-primary hover:underline">About</a>
+                <a href="/pricing" className="text-primary hover:underline">Pricing</a>
+                <a href="/resources" className="text-primary hover:underline">Resources</a>
+                <a href="/case-studies" className="text-primary hover:underline">Case Studies</a>
+                <a href="/compare" className="text-primary hover:underline">Compare</a>
+                <a href="/glossary" className="text-primary hover:underline">Glossary</a>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-4 text-gradient">Ecosystem and Backlinks</h2>
+              <div className="flex flex-wrap gap-3 text-sm">
+                <a href="https://github.com/tardis-pro/scribe" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Scribe</a>
+                <a href="https://music.tardis.digital" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">music.tardis.digital</a>
+                <a href="https://pronit.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">pronit.in</a>
+                <a href="https://work.pronit.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">work.pronit.in</a>
+                <a href="https://leads.pronit.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">leads.pronit.in</a>
+                <a href="https://dreams.pronit.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">dreams.pronit.in</a>
+                <a href="https://mirror.pronit.in" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">mirror.pronit.in</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
