@@ -89,9 +89,14 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-4">Talk to the team</h2>
           <p className="text-muted-foreground mb-6">If you are planning a GIS, AI, or platform reliability initiative, we can scope it quickly.</p>
-          <a href="mailto:hello@tardis.digital">
-            <Button className="btn-gradient">hello@tardis.digital</Button>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:hello@tardis.digital">
+              <Button className="btn-gradient">hello@tardis.digital</Button>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=919106587831" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" aria-label="Contact TARDIS Solutions on WhatsApp">WhatsApp Us</Button>
+            </a>
+          </div>
         </div>
       </section>
     </main>

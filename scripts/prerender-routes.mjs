@@ -147,7 +147,7 @@ const routeMeta = {
   "/offerings/openclaw-agentic-startup-setup": {
     title: "OpenClaw Setup Service India | AI Agent Startup Setup at Rs 5000",
     description:
-      "Launch your OpenClaw-powered agentic startup stack in days with AI team setup, workflow orchestration, memory, and channel integration for Rs 5000.",
+      "OpenClaw setup service for founders and small teams: launch a production-ready AI agent orchestration startup stack for Rs 5000 with workflows, memory, channels, and deployment support.",
     keywords:
       "openclaw setup service, ai agent setup service india, agentic startup setup, ai startup setup cost india, multi agent orchestration setup",
   },

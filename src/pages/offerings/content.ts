@@ -67,7 +67,7 @@ export type OfferingContent = {
   related: OfferingRelated[];
   seoKeywords: string[];
   serviceType: string;
-  schemaPrice?: string;
+  schemaPrice?: `${number}`;
 };
 
 const baseFaqs: OfferingFaq[] = [

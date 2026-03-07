@@ -83,6 +83,10 @@ export default function OfferingPage({ offering }: Props) {
 
   const pageUrl = `${DOMAIN}/offerings/${offering.slug}`;
   const primaryCtaHref = "#offering-footer";
+  const schemaPrice = useMemo(() => {
+    const value = offering.schemaPrice?.trim();
+    return value && /^\d+(\.\d+)?$/.test(value) ? value : "150000";
+  }, [offering.schemaPrice]);
 
   const heroGradientClass = useMemo(() => {
     if (offering.slug === "production-gravity") {
@@ -126,13 +130,13 @@ export default function OfferingPage({ offering }: Props) {
       serviceType: offering.serviceType,
       offers: {
         "@type": "Offer",
-        price: offering.schemaPrice ?? "150000",
+        price: schemaPrice,
         priceCurrency: "INR",
       },
       keywords: offeringKeywords.join(", "),
       url: pageUrl,
     }),
-    [offering, offeringKeywords, pageUrl]
+    [offering, offeringKeywords, pageUrl, schemaPrice]
   );
 
   const breadcrumbSchema = useMemo(
@@ -652,6 +656,9 @@ export default function OfferingPage({ offering }: Props) {
             </a>
             <a href="mailto:hello@tardis.digital" onClick={() => onSecondaryCtaClick("footer")}>
               <Button variant="outline" aria-label="Email Tardis">hello@tardis.digital</Button>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=919106587831" target="_blank" rel="noopener noreferrer" onClick={() => onSecondaryCtaClick("footer_whatsapp")}>
+              <Button variant="outline" aria-label="Contact Tardis on WhatsApp">WhatsApp Us</Button>
             </a>
           </div>
         </div>

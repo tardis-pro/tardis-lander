@@ -294,6 +294,9 @@ export default function TardisMaps() {
             <a href="mailto:hello@tardis.digital">
               <Button variant="outline" aria-label="Email TARDIS Solutions">hello@tardis.digital</Button>
             </a>
+            <a href="https://api.whatsapp.com/send?phone=919106587831" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" aria-label="Contact TARDIS Solutions on WhatsApp">WhatsApp Us</Button>
+            </a>
           </div>
         </div>
       </footer>
