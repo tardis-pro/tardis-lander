@@ -67,6 +67,7 @@ export type OfferingContent = {
   related: OfferingRelated[];
   seoKeywords: string[];
   serviceType: string;
+  schemaPrice?: string;
 };
 
 const baseFaqs: OfferingFaq[] = [
@@ -94,7 +95,7 @@ export const offerings: Record<string, OfferingContent> = {
     shortName: "Production-ready infrastructure in 14 days",
     metaTitle: "Production Infrastructure for Startups | Tardis",
     metaDescription:
-      "Production-ready infrastructure in 14 days, fixed price Rs 1.5L. No bloat, no scope creep, just decisive outcomes.",
+      "Production-ready infrastructure in 14 days with fixed-scope delivery, clear pricing communication, and decisive outcomes for startup teams.",
     heroBadge: "Launch Offering",
     heroHeading: "Production Gravity: ship production-ready in two weeks, not two quarters.",
     heroLead:
@@ -285,6 +286,10 @@ export const offerings: Record<string, OfferingContent> = {
       "devops for early stage startups",
       "production infrastructure setup",
       "AWS setup for startup",
+      "GIS system pricing",
+      "custom geospatial AI solutions",
+      "software infrastructure consulting India",
+      "startup devops consulting",
     ],
     serviceType: "Infrastructure Consulting",
   },
@@ -485,6 +490,10 @@ export const offerings: Record<string, OfferingContent> = {
       "incident management for startups",
       "fault tolerant system design",
       "production outage prevention",
+      "reliability engineering pricing",
+      "AI-powered GIS platform reliability",
+      "site reliability consulting India",
+      "incident response consulting",
     ],
     serviceType: "Reliability Engineering",
   },
@@ -685,6 +694,10 @@ export const offerings: Record<string, OfferingContent> = {
       "startup security audit",
       "devsecops for startups",
       "SOC2 for startups",
+      "security compliance pricing",
+      "AI tool demo security readiness",
+      "devsecops consulting India",
+      "startup security consulting",
     ],
     serviceType: "Security Consulting",
   },
@@ -1424,6 +1437,213 @@ const expansionOfferings: Record<string, OfferingContent> = {
     ],
     seoKeywords: ["site feasibility analysis", "spatial site selection", "location viability assessment", "geospatial due diligence"],
     serviceType: "Spatial Feasibility Consulting",
+  },
+  "openclaw-agentic-startup-setup": {
+    slug: "openclaw-agentic-startup-setup",
+    name: "OpenClaw Agentic Startup Setup",
+    shortName: "Launch your AI agent startup stack for Rs 5000",
+    metaTitle: "OpenClaw Setup Service India | AI Agent Startup Setup at Rs 5000",
+    metaDescription:
+      "OpenClaw setup service for founders and small teams: launch a production-ready AI agent orchestration startup stack for Rs 5000 with workflows, memory, channels, and deployment support.",
+    heroBadge: "Limited Launch Offer",
+    heroHeading: "OpenClaw setup at startup speed: from idea to agentic operations in days, not months.",
+    heroLead:
+      "If your startup is still juggling prompts, tabs, and disconnected tools, this is your unfair upgrade. We set up your OpenClaw-based agentic operating system so your PM, growth, content, and engineering agents can execute like a synchronized team from day one.",
+    problem: [
+      "Most teams lose momentum trying to stitch agents, memory, workflows, and channels by hand.",
+      "DIY setup usually creates fragile automations that break under real delivery pressure.",
+      "Without structured orchestration, founders become the bottleneck for every recurring decision.",
+    ],
+    solutionPreview:
+      "This setup service installs and configures your OpenClaw stack with specialized agents, persistent memory, workflow heartbeat, and communication channels so your startup can run an always-on execution engine at founder-friendly cost.",
+    whatYouGet: [
+      {
+        title: "Multi-agent team architecture",
+        description:
+          "We define role-specific agent SOULs and delegation flows aligned to your business motion.",
+        points: [
+          "PM, growth, content, and QA role blueprints",
+          "Hierarchical delegation paths and task ownership",
+          "Tool access boundaries by agent role",
+        ],
+      },
+      {
+        title: "Workflow and memory foundation",
+        description:
+          "Your orchestration is wired with deterministic task flow, persistent state, and auditable decisions.",
+        points: [
+          "Lifecycle pipeline setup with clear status transitions",
+          "PocketBase-backed memory and decision logs",
+          "Cron heartbeat workflow configuration",
+        ],
+      },
+      {
+        title: "Channel-ready execution setup",
+        description:
+          "Your agents are connected to real communication surfaces for production use.",
+        points: [
+          "WhatsApp, Discord, and gateway-ready bindings",
+          "Per-agent channel identity mapping",
+          "Notification and escalation rules",
+        ],
+      },
+      {
+        title: "Go-live and handoff",
+        description:
+          "You get a working setup, operating playbook, and founder walkthrough.",
+        points: [
+          "Model provider routing and fallback baseline",
+          "Local runbook for updates and troubleshooting",
+          "Handoff session with next-step roadmap",
+        ],
+      },
+    ],
+    personas: [
+      {
+        title: "Solo founder building an AI agency",
+        description:
+          "You want a complete agentic startup setup without burning weeks on infrastructure experiments.",
+      },
+      {
+        title: "Small agency scaling delivery",
+        description:
+          "You need specialized AI agent teams handling intake, execution, and QA with less founder intervention.",
+      },
+      {
+        title: "Dev team testing OpenClaw in production",
+        description:
+          "You want a clean baseline setup with reliable orchestration and clear operational boundaries.",
+      },
+      {
+        title: "Operators launching managed AI services",
+        description:
+          "You need a fast, low-risk setup service to start shipping client outcomes quickly.",
+      },
+    ],
+    process: [
+      {
+        dayLabel: "Day 1",
+        title: "Scope lock and architecture mapping",
+        detail:
+          "We define your startup use case, target workflows, and the exact agent roster to deploy.",
+      },
+      {
+        dayLabel: "Day 2",
+        title: "OpenClaw setup and orchestration wiring",
+        detail:
+          "We configure agents, memory, workflow engine, and role-based tool controls.",
+      },
+      {
+        dayLabel: "Day 3",
+        title: "Channel integration and reliability pass",
+        detail:
+          "We connect channels, validate task execution loops, and finalize delivery-safe defaults.",
+      },
+      {
+        dayLabel: "Day 4",
+        title: "Handoff and growth roadmap",
+        detail:
+          "You get operational documentation, founder walkthrough, and practical next milestones.",
+      },
+    ],
+    price: "Rs 5000",
+    timeline: "4-day setup sprint",
+    pricingLead:
+      "For less than the cost of a single hiring interview loop, you get a working agentic startup operating stack that can execute daily without chaos.",
+    pricingIncludes: [
+      "OpenClaw environment setup and baseline configuration",
+      "Agent team definitions and orchestration workflow wiring",
+      "Memory, channel binding, and handoff documentation",
+    ],
+    guarantees: [
+      "Rs 5000 fixed launch pricing",
+      "No hidden setup add-ons for the agreed scope",
+      "Working baseline with founder handoff session",
+    ],
+    objections: [
+      {
+        title: "Can we set this up ourselves for free?",
+        answer:
+          "You can, but most teams burn days in integration loops and still miss orchestration quality. This offer compresses setup risk into a guided sprint so you can focus on delivery.",
+      },
+      {
+        title: "Is Rs 5000 too cheap to be serious?",
+        answer:
+          "It is an aggressive launch offer to help early-stage teams adopt agentic execution fast. You still get a real production-minded baseline, not a shallow demo.",
+      },
+      {
+        title: "Will this lock us into one model provider?",
+        answer:
+          "No. We set up provider flexibility and fallback paths so you can route by quality, latency, and cost.",
+      },
+    ],
+    comparisons: [
+      {
+        path: "DIY setup from scratch",
+        tradeoff: "Lower upfront spend, high setup drift and inconsistent execution quality.",
+        fit: "Works only if your team has time and deep orchestration experience.",
+      },
+      {
+        path: "General automation freelancers",
+        tradeoff: "Can ship pieces quickly but often lack robust agent-team architecture.",
+        fit: "Useful for isolated tasks, weaker for full startup operating systems.",
+      },
+      {
+        path: "OpenClaw Agentic Startup Setup",
+        tradeoff: "Focused, fixed-scope baseline for speed, clarity, and immediate execution.",
+        fit: "Best for startups that want a production-ready AI agent team setup this week.",
+      },
+    ],
+    faqs: [
+      ...baseFaqs,
+      {
+        question: "What exactly do you deliver in the Rs 5000 OpenClaw setup service?",
+        answer:
+          "A live OpenClaw setup with configured agent roles, workflow heartbeat, memory baseline, channel bindings, and a handoff guide your team can run.",
+      },
+      {
+        question: "Can this support WhatsApp and Discord agent communication?",
+        answer:
+          "Yes. We prepare channel-ready bindings and explain how to activate and manage each channel safely.",
+      },
+      {
+        question: "Who is this best for?",
+        answer:
+          "Founders, agencies, and small product teams that want to launch an AI agent orchestration startup stack quickly without infrastructure thrash.",
+      },
+    ],
+    testimonial: {
+      quote:
+        "We went from scattered AI experiments to a coordinated agent team in under a week. The setup paid for itself immediately.",
+      author: "Founder",
+      company: "Early-stage AI Services Studio",
+    },
+    related: [
+      {
+        title: "Scale Without Regret",
+        href: "/offerings/scale-without-regret",
+        description: "Plan architecture growth once your agent operations start compounding.",
+      },
+      {
+        title: "Platform Extraction",
+        href: "/offerings/platform-extraction",
+        description: "Define stronger platform boundaries as your internal agent stack matures.",
+      },
+    ],
+    seoKeywords: [
+      "openclaw setup service",
+      "openclaw setup india",
+      "ai agent setup service",
+      "agentic startup setup",
+      "multi agent orchestration setup",
+      "ai automation agency setup",
+      "ai agent team deployment",
+      "ai startup setup cost india",
+      "openclaw implementation service",
+      "agent workflow automation setup",
+    ],
+    serviceType: "AI Agent Orchestration Setup",
+    schemaPrice: "5000",
   },
 };
 

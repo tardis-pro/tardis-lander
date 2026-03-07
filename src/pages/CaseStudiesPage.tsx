@@ -36,8 +36,32 @@ export default function CaseStudiesPage() {
           <Badge variant="secondary" className="mb-4">Case Studies</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">Delivery stories from real engineering constraints.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Representative examples of how TARDIS Solutions approaches GIS performance, AI orchestration, and platform reliability.
+            Representative examples of how TARDIS Solutions approaches GIS performance, AI orchestration, adaptive learning,
+            and privacy-first platform reliability.
           </p>
+        </div>
+      </section>
+
+      <section className="py-16 border-b">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <Card className="card-hover">
+            <CardHeader>
+              <Badge variant="secondary" className="w-fit">Authority Theme</Badge>
+              <CardTitle>AI in Learning + GIS Analytics in Production</CardTitle>
+              <CardDescription>
+                Decision-focused stories for teams evaluating adaptive e-learning with geospatial analytics in enterprise environments.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground space-y-3">
+              <p>
+                We publish implementation narratives that connect model behavior, geospatial context, and learning outcomes so buyers can
+                evaluate business impact before committing budget.
+              </p>
+              <p>
+                Every case study emphasizes reliability, privacy safeguards, and long-term maintainability to support high-intent commercial decisions.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

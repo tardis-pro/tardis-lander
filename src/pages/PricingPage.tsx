@@ -1,13 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { formatCurrencyForLocale, getUserLocale } from "@/lib/pricing";
 
 export default function PricingPage() {
   useEffect(() => {
     document.title = "Pricing | TARDIS Solutions";
   }, []);
+
+  const userLocale = useMemo(() => getUserLocale(), []);
+  const productionGravityPrice = useMemo(
+    () => `${formatCurrencyForLocale(150000, "INR", userLocale)} fixed`,
+    [userLocale]
+  );
 
   return (
     <main role="main" className="min-h-screen bg-background text-foreground">
@@ -17,8 +24,9 @@ export default function PricingPage() {
           <Badge variant="secondary" className="mb-4">Pricing</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">Clear pricing models for teams that need delivery certainty.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            We use fixed-scope sprint pricing where possible and milestone pricing for larger builds.
-            The goal is to minimize budget drift while keeping decisions fast.
+            We use fixed-scope sprint pricing and milestone pricing across custom geospatial AI solutions,
+            AI-powered GIS learning platforms, and adaptive analytics products. The goal is to keep decisions fast,
+            budgets predictable, and commercial planning clear for teams in India and global markets.
           </p>
         </div>
       </section>
@@ -38,7 +46,7 @@ export default function PricingPage() {
               <TableRow>
                 <TableCell className="font-medium">Production Gravity</TableCell>
                 <TableCell>14 days</TableCell>
-                <TableCell>Rs 1.5L fixed</TableCell>
+                <TableCell>{productionGravityPrice}</TableCell>
                 <TableCell>Launch-ready infrastructure sprint</TableCell>
               </TableRow>
               <TableRow>
@@ -82,7 +90,7 @@ export default function PricingPage() {
             <CardHeader>
               <CardTitle>How we estimate</CardTitle>
             </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">Short scoping call, technical assumptions document, then fixed milestone map before kickoff.</CardContent>
+            <CardContent className="text-sm text-muted-foreground">Short scoping call, AI tool demo review, technical assumptions document, then fixed milestone map before kickoff.</CardContent>
           </Card>
         </div>
       </section>

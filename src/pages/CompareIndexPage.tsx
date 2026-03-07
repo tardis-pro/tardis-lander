@@ -37,7 +37,8 @@ export default function CompareIndexPage() {
           <Badge variant="secondary" className="mb-4">Compare</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">Comparison guides for high-intent decisions.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Independent comparison pages for teams evaluating geospatial platforms, AI orchestration stacks, and delivery partners.
+            Independent comparison pages for teams evaluating geospatial platforms, AI orchestration stacks,
+            delivery partners, and pricing-fit options in India and global markets.
           </p>
         </div>
       </section>

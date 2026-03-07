@@ -25,8 +25,44 @@ export default function ResourcesPage() {
           <h1 className="text-5xl font-bold mb-6 text-gradient">Reference hubs, tools, and ecosystem properties.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
             This page consolidates product docs, open-source assets, and external properties that support implementation, research,
-            and operational workflows around TARDIS Solutions.
+            and high-intent decision workflows across GIS, AI, and adaptive learning programs.
           </p>
+        </div>
+      </section>
+
+      <section className="py-16 border-b">
+        <div className="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-6">
+          <Card className="card-hover h-full">
+            <CardHeader>
+              <CardTitle>Paid Campaign Intelligence</CardTitle>
+              <CardDescription>How we translate paid keyword signals into organic content priorities.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                We monitor competitor ad themes for terms such as <strong>GIS system pricing</strong>, <strong>AI tool demo</strong>,
+                and <strong>learning platform cost</strong> to identify proven commercial-intent demand.
+              </p>
+              <p>
+                Those high-conversion terms get reflected in our pricing, comparison, and offering pages so search traffic maps to
+                clear buyer actions instead of generic informational copy.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="card-hover h-full">
+            <CardHeader>
+              <CardTitle>Authoritative Content Roadmap</CardTitle>
+              <CardDescription>Publishing themes that build trust with technical and business decision-makers.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
+              <p>
+                We prioritize case studies and practical guides around <strong>AI in learning</strong>, geospatial analytics,
+                and privacy-first AI deployment to reinforce reliability and long-term support positioning.
+              </p>
+              <p>
+                Each content cluster links back to solution pages with transparent commercial language so prospects can evaluate fit quickly.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

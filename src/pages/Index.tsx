@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ContactForm from "@/components/ContactForm";
 import Hyperspeed from "@/components/Hyperspeed";
+import { localizePriceCopy, localizePriceValue, getUserLocale } from "@/lib/pricing";
 import { offeringList } from "./offerings/content";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import {
   Globe,
   Brain,
@@ -23,7 +23,6 @@ import {
   Settings,
   Rocket,
   Building,
-  Lightbulb,
   HelpCircle
 } from "lucide-react";
 
@@ -33,6 +32,15 @@ const Index = () => {
   }, []);
 
   const primaryContactHref = "#contact";
+  const userLocale = useMemo(() => getUserLocale(), []);
+  const pricingModelAnswer = useMemo(
+    () =>
+      localizePriceCopy(
+        "We charge fixed-price per milestone for scoped projects, or time-and-materials for ongoing development work. Small projects start around $15k-$30k. Mid-sized builds (2-3 months) range from $50k-$150k. Large platform projects start at $200k+. We send detailed estimates after the scoping call so there are no surprises.",
+        userLocale
+      ),
+    [userLocale]
+  );
 
   const coreOfferingSlugs = new Set([
     "production-gravity",
@@ -41,6 +49,10 @@ const Index = () => {
   ]);
 
   const expandedOfferings = offeringList.filter((offering) => !coreOfferingSlugs.has(offering.slug));
+  const localizedExpandedOfferings = useMemo(
+    () => localizePriceValue(expandedOfferings, userLocale),
+    [expandedOfferings, userLocale]
+  );
 
   return (
     <main role="main" className="min-h-screen bg-background text-foreground">
@@ -55,7 +67,7 @@ const Index = () => {
               We Build Software That Actually Works at Scale
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              TARDIS Solutions helps teams turn complex spatial data, AI workflows, and learning systems into production-ready products. We write the infrastructure so you can focus on your domain.
+              TARDIS Solutions helps teams launch custom geospatial AI solutions, AI-powered GIS learning platforms, and adaptive e-learning systems with production-ready reliability.
             </p>
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
               <a href={primaryContactHref}>
@@ -71,6 +83,66 @@ const Index = () => {
                 </Button>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-b bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-3 text-gradient">High-Intent Buying Paths</h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Evaluate GIS system pricing, request an AI tool demo, or estimate adaptive learning platform cost with GIS analytics for teams in India and global markets.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Commercial Intent</Badge>
+                <CardTitle className="text-2xl">GIS System Pricing</CardTitle>
+                <CardDescription>Understand fixed-scope and milestone pricing before technical discovery starts.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="/pricing" aria-label="Review GIS system pricing">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    View Pricing Signals
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Solution Fit</Badge>
+                <CardTitle className="text-2xl">Custom Geospatial AI Solutions</CardTitle>
+                <CardDescription>See where GIS, AI orchestration, and adaptive learning workflows intersect.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="#work" aria-label="Explore custom geospatial AI solutions">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Explore Use Cases
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Regional Demand</Badge>
+                <CardTitle className="text-2xl">AI Tool Demo in India</CardTitle>
+                <CardDescription>Book an AI and GIS workflow demo with delivery planning for India and Kolkata teams.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="#contact" aria-label="Book AI tool demo">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Book a Demo
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -439,7 +511,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {expandedOfferings.map((offering) => (
+            {localizedExpandedOfferings.map((offering) => (
               <Card key={offering.slug} className="card-hover h-full border-primary/20">
                 <CardHeader>
                   <Badge variant="secondary" className="w-fit">{offering.serviceType}</Badge>
@@ -602,7 +674,7 @@ const Index = () => {
                   <span className="text-lg font-semibold">What's your pricing model?</span>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
-                  We charge fixed-price per milestone for scoped projects, or time-and-materials for ongoing development work. Small projects start around $15k-$30k. Mid-sized builds (2-3 months) range from $50k-$150k. Large platform projects start at $200k+. We send detailed estimates after the scoping call so there are no surprises.
+                  {pricingModelAnswer}
                 </AccordionContent>
               </AccordionItem>
 

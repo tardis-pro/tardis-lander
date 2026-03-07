@@ -29,16 +29,21 @@ const routes = [
   "/offerings/spatial-risk-exposure",
   "/offerings/satellite-signal-extraction",
   "/offerings/spatial-feasibility-test",
+  "/offerings/openclaw-agentic-startup-setup",
 ];
 
 const routeMeta = {
   "/": {
     title: "TARDIS Solutions - GIS, AI, and EdTech Development Company",
-    description: "TARDIS Solutions builds fast, privacy-first GIS systems, AI tools, and adaptive learning platforms for teams solving complex problems.",
+    description: "TARDIS Solutions delivers custom geospatial AI solutions, AI-powered GIS learning platforms, and adaptive e-learning with GIS analytics.",
+    keywords:
+      "AI-powered GIS learning platform, custom geospatial AI solutions, adaptive e-learning with GIS analytics, GIS development company India",
   },
   "/maps": {
     title: "TARDIS Maps - Geo-Intelligence at Planetary Scale | TARDIS Solutions",
     description: "Search-first geospatial intelligence platform for high-volume spatial datasets, real-time layers, and operational mapping workflows.",
+    keywords:
+      "custom geospatial AI solutions, enterprise geospatial analytics platform, AI-powered GIS platform demo",
   },
   "/about": {
     title: "About TARDIS Solutions | GIS, AI, and Engineering Team",
@@ -46,11 +51,17 @@ const routeMeta = {
   },
   "/pricing": {
     title: "Pricing | TARDIS Solutions",
-    description: "Pricing for fixed-scope 14-day offerings and milestone-based GIS, AI, and platform engineering engagements.",
+    description:
+      "Transparent GIS system pricing, AI tool demo scoping, and adaptive learning platform cost planning for India and global teams.",
+    keywords:
+      "GIS system pricing, AI tool demo, learning platform cost, software development pricing India",
   },
   "/resources": {
     title: "Resources | TARDIS Solutions",
-    description: "Docs, repositories, ecosystem links, and reference properties including scribe and music.tardis.digital.",
+    description:
+      "Guides, repositories, and campaign-intent resources for teams evaluating AI-powered GIS learning platforms and custom geospatial AI solutions.",
+    keywords:
+      "AI in learning guide, custom geospatial AI solutions resources, GIS analytics implementation guide, AI tool demo checklist",
   },
   "/glossary": {
     title: "Glossary | GIS, AI, and Platform Definitions",
@@ -58,11 +69,17 @@ const routeMeta = {
   },
   "/case-studies": {
     title: "Case Studies | TARDIS Solutions",
-    description: "Representative delivery examples across geospatial operations, AI infrastructure, and adaptive learning platforms.",
+    description:
+      "Authoritative case studies across geospatial operations, AI infrastructure, and adaptive learning platforms focused on reliability and privacy.",
+    keywords:
+      "AI in learning case study, geospatial AI implementation case study, adaptive e-learning with GIS analytics examples, enterprise AI reliability",
   },
   "/compare": {
     title: "Compare | TARDIS Solutions",
-    description: "Comparison guides for GIS platforms, AI orchestration frameworks, and custom engineering partner selection.",
+    description:
+      "High-intent comparison guides for GIS platforms, AI orchestration frameworks, pricing-fit evaluation, and custom engineering partner selection.",
+    keywords:
+      "GIS platform comparison, AI orchestration framework comparison, GIS system pricing comparison, software partner evaluation India",
   },
   "/compare/tardis-maps-vs-mapbox": {
     title: "TARDIS Maps vs Mapbox (2026) | TARDIS Solutions",
@@ -78,7 +95,10 @@ const routeMeta = {
   },
   "/offerings/production-gravity": {
     title: "Production Infrastructure for Startups | Tardis",
-    description: "Production-ready infrastructure in 14 days, fixed price Rs 1.5L. No bloat, no scope creep, just decisive outcomes.",
+    description:
+      "Production-ready infrastructure in 14 days with fixed-scope delivery, transparent commercial terms, and region-aware pricing communication.",
+    keywords:
+      "startup infrastructure sprint pricing, DevOps implementation cost India, production infrastructure consulting, fixed-scope engineering sprint",
   },
   "/offerings/failure-first-architecture": {
     title: "Failure-First Reliability Sprint | Tardis",
@@ -124,14 +144,23 @@ const routeMeta = {
     title: "Spatial Feasibility Test | Tardis",
     description: "Rapid geospatial feasibility assessment before product, operations, or infrastructure commitments.",
   },
+  "/offerings/openclaw-agentic-startup-setup": {
+    title: "OpenClaw Setup Service India | AI Agent Startup Setup at Rs 5000",
+    description:
+      "Launch your OpenClaw-powered agentic startup stack in days with AI team setup, workflow orchestration, memory, and channel integration for Rs 5000.",
+    keywords:
+      "openclaw setup service, ai agent setup service india, agentic startup setup, ai startup setup cost india, multi agent orchestration setup",
+  },
 };
 
 function applyMeta(templateHtml, routePath) {
   const canonicalUrl = `https://tardis.digital${routePath === "/" ? "/" : routePath}`;
   const meta = routeMeta[routePath] ?? routeMeta["/"];
+  const keywordContent = meta.keywords ?? routeMeta["/"].keywords;
   return templateHtml
     .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
     .replace(/<meta name="description" content="[^"]*"\s*\/>/, `<meta name="description" content="${meta.description}" />`)
+    .replace(/<meta name="keywords" content="[^"]*"\s*\/>/, `<meta name="keywords" content="${keywordContent}" />`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
     .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${meta.title}" />`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${meta.description}" />`)

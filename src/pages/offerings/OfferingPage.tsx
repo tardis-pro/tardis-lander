@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { getUserLocale, localizePriceCopy, localizePriceValue } from "@/lib/pricing";
 import type { OfferingContent } from "./content";
 
 type AnalyticsValue = string | number | boolean;
@@ -22,6 +23,13 @@ declare global {
 }
 
 const DOMAIN = "https://tardis.digital";
+
+const GLOBAL_HIGH_INTENT_KEYWORDS = [
+  "custom geospatial AI solutions",
+  "AI-powered GIS learning platform",
+  "adaptive e-learning with GIS analytics",
+  "enterprise GIS and AI consulting",
+];
 
 function sendAnalyticsEvent(event: string, params: Record<string, AnalyticsValue> = {}) {
   const payload: AnalyticsPayload = { event, ...params };
@@ -63,6 +71,15 @@ export default function OfferingPage({ offering }: Props) {
   const [isMobile, setIsMobile] = useState(false);
   const startTime = useRef<number>(Date.now());
   const sentScrollThresholds = useRef<Set<number>>(new Set());
+  const userLocale = useMemo(() => getUserLocale(), []);
+  const localizedOffering = useMemo(() => localizePriceValue(offering, userLocale), [offering, userLocale]);
+  const localizedMetaDescription = useMemo(
+    () => localizePriceCopy(offering.metaDescription, userLocale),
+    [offering.metaDescription, userLocale]
+  );
+  const offeringKeywords = useMemo(() => {
+    return [...new Set([...offering.seoKeywords, ...GLOBAL_HIGH_INTENT_KEYWORDS])].slice(0, 8);
+  }, [offering.seoKeywords]);
 
   const pageUrl = `${DOMAIN}/offerings/${offering.slug}`;
   const primaryCtaHref = "#offering-footer";
@@ -109,13 +126,13 @@ export default function OfferingPage({ offering }: Props) {
       serviceType: offering.serviceType,
       offers: {
         "@type": "Offer",
-        price: "150000",
+        price: offering.schemaPrice ?? "150000",
         priceCurrency: "INR",
       },
-      keywords: offering.seoKeywords.join(", "),
+      keywords: offeringKeywords.join(", "),
       url: pageUrl,
     }),
-    [offering, pageUrl]
+    [offering, offeringKeywords, pageUrl]
   );
 
   const breadcrumbSchema = useMemo(
@@ -148,21 +165,21 @@ export default function OfferingPage({ offering }: Props) {
 
   useEffect(() => {
     document.title = offering.metaTitle;
-    upsertMetaTag("name", "description", offering.metaDescription);
+    upsertMetaTag("name", "description", localizedMetaDescription);
     upsertMetaTag("name", "robots", "index, follow, max-snippet:-1, max-image-preview:large");
     upsertMetaTag("property", "og:title", offering.metaTitle);
-    upsertMetaTag("property", "og:description", offering.metaDescription);
+    upsertMetaTag("property", "og:description", localizedMetaDescription);
     upsertMetaTag("property", "og:type", "website");
     upsertMetaTag("property", "og:site_name", "TARDIS Solutions");
     upsertMetaTag("property", "og:url", pageUrl);
     upsertMetaTag("property", "og:image", `${DOMAIN}/og-image.svg`);
     upsertMetaTag("name", "twitter:title", offering.metaTitle);
-    upsertMetaTag("name", "twitter:description", offering.metaDescription);
+    upsertMetaTag("name", "twitter:description", localizedMetaDescription);
     upsertMetaTag("name", "twitter:card", "summary_large_image");
     upsertMetaTag("name", "twitter:image", `${DOMAIN}/og-image.svg`);
-    upsertMetaTag("name", "keywords", offering.seoKeywords.join(", "));
+    upsertMetaTag("name", "keywords", offeringKeywords.join(", "));
     upsertCanonical(pageUrl);
-  }, [offering.metaDescription, offering.metaTitle, offering.seoKeywords, pageUrl]);
+  }, [localizedMetaDescription, offering.metaTitle, offeringKeywords, pageUrl]);
 
   useEffect(() => {
     if (!showMobileNudge) {
@@ -269,10 +286,10 @@ export default function OfferingPage({ offering }: Props) {
         <div className="relative container mx-auto px-6 py-20 md:py-28">
           <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-5">
-              {offering.heroBadge}
+              {localizedOffering.heroBadge}
             </Badge>
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">{offering.heroHeading}</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{offering.heroLead}</p>
+            <h1 className="text-4xl font-bold leading-tight md:text-5xl">{localizedOffering.heroHeading}</h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{localizedOffering.heroLead}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={primaryCtaHref} onClick={() => onPrimaryCtaClick("hero")}> 
                 <Button size="lg" className="btn-gradient min-h-11 min-w-44" aria-label="Book your free discovery call">
@@ -289,7 +306,7 @@ export default function OfferingPage({ offering }: Props) {
               </a>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              {offering.seoKeywords.slice(0, 4).map((keyword) => (
+              {localizedOffering.seoKeywords.slice(0, 4).map((keyword) => (
                 <Badge key={keyword} variant="outline" className="text-xs">
                   {keyword}
                 </Badge>
@@ -308,7 +325,7 @@ export default function OfferingPage({ offering }: Props) {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-muted-foreground">
-                  {offering.problem.map((item) => (
+                  {localizedOffering.problem.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="mt-2 h-2 w-2 rounded-full bg-primary" aria-hidden />
                       <span>{item}</span>
@@ -320,10 +337,10 @@ export default function OfferingPage({ offering }: Props) {
             <Card className="border-primary/30">
               <CardHeader>
                 <CardTitle className="text-3xl">What you get in 14 days</CardTitle>
-                <CardDescription className="text-base">{offering.solutionPreview}</CardDescription>
+                <CardDescription className="text-base">{localizedOffering.solutionPreview}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm text-muted-foreground">
-                {offering.whatYouGet.slice(0, 3).map((item) => (
+                {localizedOffering.whatYouGet.slice(0, 3).map((item) => (
                   <div key={item.title} className="rounded-md border bg-muted/50 p-4">
                     <p className="font-semibold text-foreground">{item.title}</p>
                     <p className="mt-1">{item.description}</p>
@@ -342,7 +359,7 @@ export default function OfferingPage({ offering }: Props) {
             <p className="mt-3 text-muted-foreground">Clear deliverables, not advisory theater.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {offering.whatYouGet.map((item) => (
+            {localizedOffering.whatYouGet.map((item) => (
               <Card key={item.title} className="card-hover h-full">
                 <CardHeader>
                   <CardTitle>{item.title}</CardTitle>
@@ -378,7 +395,7 @@ export default function OfferingPage({ offering }: Props) {
             <p className="mt-3 text-muted-foreground">Built for early-stage teams with real shipping pressure.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {offering.personas.map((persona) => (
+            {localizedOffering.personas.map((persona) => (
               <Card key={persona.title} className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">{persona.title}</CardTitle>
@@ -399,7 +416,7 @@ export default function OfferingPage({ offering }: Props) {
             <p className="mt-3 text-muted-foreground">One focused sprint. Defined milestones. No drift.</p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {offering.process.map((step) => (
+            {localizedOffering.process.map((step) => (
               <Card key={step.title} className="h-full border-primary/20">
                 <CardHeader>
                   <Badge variant="outline" className="w-fit">
@@ -420,16 +437,16 @@ export default function OfferingPage({ offering }: Props) {
         <div className="container mx-auto px-6">
           <Card className="mx-auto max-w-4xl border-primary/40 shadow-lg">
             <CardHeader>
-              <Badge className="w-fit">{offering.name}</Badge>
-              <CardTitle className="text-4xl">{offering.price}</CardTitle>
-              <CardDescription className="text-base">{offering.timeline}</CardDescription>
-              <p className="text-sm text-muted-foreground">{offering.pricingLead}</p>
+              <Badge className="w-fit">{localizedOffering.name}</Badge>
+              <CardTitle className="text-4xl">{localizedOffering.price}</CardTitle>
+              <CardDescription className="text-base">{localizedOffering.timeline}</CardDescription>
+              <p className="text-sm text-muted-foreground">{localizedOffering.pricingLead}</p>
             </CardHeader>
             <CardContent className="grid gap-8 md:grid-cols-2">
               <div>
                 <p className="mb-3 font-semibold">Included</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {offering.pricingIncludes.map((item) => (
+                  {localizedOffering.pricingIncludes.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <Check className="mt-0.5 h-4 w-4 text-primary" />
                       <span>{item}</span>
@@ -440,7 +457,7 @@ export default function OfferingPage({ offering }: Props) {
               <div>
                 <p className="mb-3 font-semibold">Trust Signals</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {offering.guarantees.map((item) => (
+                  {localizedOffering.guarantees.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <ShieldCheck className="mt-0.5 h-4 w-4 text-primary" />
                       <span>{item}</span>
@@ -459,7 +476,7 @@ export default function OfferingPage({ offering }: Props) {
             <h2 className="text-3xl font-bold md:text-4xl">Common Objections, Straight Answers</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {offering.objections.map((item) => (
+            {localizedOffering.objections.map((item) => (
               <Card key={item.title} className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">{item.title}</CardTitle>
@@ -480,7 +497,7 @@ export default function OfferingPage({ offering }: Props) {
             <p className="mt-3 text-muted-foreground">Tradeoffs made explicit so you can decide with eyes open.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {offering.comparisons.map((item) => (
+            {localizedOffering.comparisons.map((item) => (
               <Card key={item.path} className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">{item.path}</CardTitle>
@@ -519,7 +536,7 @@ export default function OfferingPage({ offering }: Props) {
                 }
 
                 const index = Number(value.replace("faq-", ""));
-                const item = offering.faqs[index];
+                const item = localizedOffering.faqs[index];
                 if (!item) {
                   return;
                 }
@@ -531,7 +548,7 @@ export default function OfferingPage({ offering }: Props) {
                 });
               }}
             >
-              {offering.faqs.map((faq, index) => (
+              {localizedOffering.faqs.map((faq, index) => (
                 <AccordionItem key={faq.question} value={`faq-${index}`} className="border-b border-border">
                   <AccordionTrigger className="text-left text-base">{faq.question}</AccordionTrigger>
                   <AccordionContent className="text-sm leading-relaxed text-muted-foreground">{faq.answer}</AccordionContent>
@@ -549,9 +566,9 @@ export default function OfferingPage({ offering }: Props) {
               <CardTitle className="text-2xl">Trusted by early-stage teams that need speed and certainty</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg text-foreground">"{offering.testimonial.quote}"</p>
+              <p className="text-lg text-foreground">"{localizedOffering.testimonial.quote}"</p>
               <p className="mt-2 text-sm text-muted-foreground">
-                - {offering.testimonial.author}, {offering.testimonial.company}
+                - {localizedOffering.testimonial.author}, {localizedOffering.testimonial.company}
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <Badge variant="outline">Founder-led teams</Badge>
@@ -579,7 +596,7 @@ export default function OfferingPage({ offering }: Props) {
             <h2 className="text-3xl font-bold md:text-4xl">Related Services</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {offering.related.map((item) => (
+            {localizedOffering.related.map((item) => (
               <Card key={item.href} className="card-hover h-full">
                 <CardHeader>
                   <CardTitle className="text-2xl">{item.title}</CardTitle>
@@ -626,7 +643,7 @@ export default function OfferingPage({ offering }: Props) {
       <footer id="offering-footer" className="border-t bg-muted/30">
         <div className="container mx-auto px-6 py-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-semibold">{offering.name}</p>
+            <p className="font-semibold">{localizedOffering.name}</p>
             <p className="text-sm text-muted-foreground">Fixed-scope delivery with decision-ready outcomes.</p>
           </div>
           <div className="flex items-center gap-3">
