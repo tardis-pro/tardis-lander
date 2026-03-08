@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function CompareMapboxPage() {
@@ -15,8 +16,7 @@ export default function CompareMapboxPage() {
           <Badge variant="secondary" className="mb-4">Comparison</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">TARDIS Maps vs Mapbox: search-first GIS vs tile-first APIs</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Mapbox excels at map rendering SDKs. TARDIS Maps focuses on search-first geospatial intelligence workflows where
-            teams need to query, rank, and operationalize large spatial datasets without custom SQL-heavy glue code.
+            Choose this path if your team is deciding between a map-rendering toolkit and a search-first spatial system that can shorten analysis time and reduce custom query work.
           </p>
         </div>
       </section>
@@ -60,6 +60,23 @@ export default function CompareMapboxPage() {
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+      </section>
+
+      <section className="py-16 border-t text-center">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-4">What this comparison really comes down to</h2>
+          <p className="text-muted-foreground mb-6">
+            If you mainly need beautiful maps and mature SDKs, Mapbox can be the cleaner fit. If your bottleneck is finding, ranking, and operationalizing spatial data fast, TARDIS Maps is built for that decision surface.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="/maps">
+              <Button className="btn-gradient">Explore TARDIS Maps</Button>
+            </a>
+            <a href="/compare">
+              <Button variant="outline">Back to Compare</Button>
+            </a>
+          </div>
         </div>
       </section>
     </main>

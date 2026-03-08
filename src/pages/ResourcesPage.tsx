@@ -22,10 +22,9 @@ export default function ResourcesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-primary/5 to-secondary/10" />
         <div className="relative container mx-auto px-6 py-20">
           <Badge variant="secondary" className="mb-4">Resources</Badge>
-          <h1 className="text-5xl font-bold mb-6 text-gradient">Reference hubs, tools, and ecosystem properties.</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gradient">Resources for buyers doing technical diligence.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            This page consolidates product docs, open-source assets, and external properties that support implementation, research,
-            and high-intent decision workflows across GIS, AI, and adaptive learning programs.
+            Use this page to inspect the repos, references, and decision-support material behind our recommendations before you scope a project with us.
           </p>
         </div>
       </section>
@@ -34,32 +33,29 @@ export default function ResourcesPage() {
         <div className="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-6">
           <Card className="card-hover h-full">
             <CardHeader>
-              <CardTitle>Paid Campaign Intelligence</CardTitle>
-              <CardDescription>How we translate paid keyword signals into organic content priorities.</CardDescription>
+              <CardTitle>Start with the decision you need to make</CardTitle>
+              <CardDescription>Use the right page for pricing clarity, vendor comparison, or delivery proof.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p>
-                We monitor competitor ad themes for terms such as <strong>GIS system pricing</strong>, <strong>AI tool demo</strong>,
-                and <strong>learning platform cost</strong> to identify proven commercial-intent demand.
+                If you are still comparing options, go to <strong>Compare</strong>. If you need budget context, go to <strong>Pricing</strong>. If you want to see how we work under real engineering pressure, start with <strong>Case Studies</strong>.
               </p>
               <p>
-                Those high-conversion terms get reflected in our pricing, comparison, and offering pages so search traffic maps to
-                clear buyer actions instead of generic informational copy.
+                This resource page exists to reduce guesswork before a discovery call. You should leave with a clearer view of fit, implementation risk, and next steps.
               </p>
             </CardContent>
           </Card>
           <Card className="card-hover h-full">
             <CardHeader>
-              <CardTitle>Authoritative Content Roadmap</CardTitle>
-              <CardDescription>Publishing themes that build trust with technical and business decision-makers.</CardDescription>
+              <CardTitle>Inspect how we think, not just what we promise</CardTitle>
+              <CardDescription>Browse working repos and ecosystem properties that show our technical depth in public.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
               <p>
-                We prioritize case studies and practical guides around <strong>AI in learning</strong>, geospatial analytics,
-                and privacy-first AI deployment to reinforce reliability and long-term support positioning.
+                Technical buyers usually want more than polished claims. They want proof that a team publishes, builds, and maintains real systems.
               </p>
               <p>
-                Each content cluster links back to solution pages with transparent commercial language so prospects can evaluate fit quickly.
+                The links below give you a practical way to inspect open tooling, founder writing, and supporting properties before you decide whether to talk to us.
               </p>
             </CardContent>
           </Card>
@@ -68,35 +64,33 @@ export default function ResourcesPage() {
 
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-3xl font-bold mb-6 text-gradient">Featured Products and Repositories</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gradient">Products, repositories, and working references</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="card-hover">
               <CardHeader>
                 <CardTitle>Scribe</CardTitle>
-                <CardDescription>Open tooling for writing, transformation, and document pipelines.</CardDescription>
+                <CardDescription>Open tooling for structured writing, transformation, and document workflows.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  Scribe is an actively evolving project for high-throughput content workflows, deterministic formatting, and pipeline automation.
-                  It is designed to integrate with structured content systems and technical publishing flows.
+                  Scribe is a good example of how we turn repeatable workflow pain into maintainable tooling. It shows the kind of systems thinking we bring to internal platforms and publishing automation.
                 </p>
                 <a href="https://github.com/tardis-pro/scribe" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">Open scribe repository</Button>
+                  <Button variant="outline">Review the Repository</Button>
                 </a>
               </CardContent>
             </Card>
             <Card className="card-hover">
               <CardHeader>
-                <CardTitle>TARDIS Music</CardTitle>
-                <CardDescription>Media and audio property in the wider TARDIS ecosystem.</CardDescription>
+                <CardTitle>Work Archive</CardTitle>
+                <CardDescription>A public archive of projects, build notes, and implementation snapshots across the TARDIS ecosystem.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  music.tardis.digital hosts experiments, releases, and sonic assets tied to TARDIS initiatives. It extends our
-                  ecosystem footprint across media while maintaining the same engineering-first publishing discipline.
+                  work.pronit.in is a better diligence surface for technical buyers because it shows how ideas turn into shipped artifacts, documented experiments, and public implementation trails.
                 </p>
-                <a href="https://music.tardis.digital" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">Visit music.tardis.digital</Button>
+                <a href="https://work.pronit.in" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline">Browse the Work Archive</Button>
                 </a>
               </CardContent>
             </Card>
@@ -106,7 +100,7 @@ export default function ResourcesPage() {
 
       <section className="py-16 bg-muted/40">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-3xl font-bold mb-6 text-gradient">Backlink Network</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gradient">Founder and ecosystem references</h2>
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {ecosystemLinks.map((item) => (
               <Card key={item.url} className="card-hover">
@@ -121,6 +115,23 @@ export default function ResourcesPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 border-t text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-4">Need help turning research into a scoped next step?</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            If you have reviewed the materials and want a practical recommendation, start with pricing, compare your options, or send us your current constraints.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="/pricing">
+              <Button className="btn-gradient">See Pricing</Button>
+            </a>
+            <a href="/compare">
+              <Button variant="outline">Open Compare Guides</Button>
+            </a>
           </div>
         </div>
       </section>

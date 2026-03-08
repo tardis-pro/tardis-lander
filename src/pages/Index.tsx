@@ -64,22 +64,22 @@ const Index = () => {
         <div className="relative container mx-auto px-6 py-24 z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6 text-white">
-              We Build Software That Actually Works at Scale
+              GIS, AI, and learning systems built for real-world pressure
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-              TARDIS Solutions helps teams launch custom geospatial AI solutions, AI-powered GIS learning platforms, and adaptive e-learning systems with production-ready reliability.
+              TARDIS Solutions designs and ships geospatial platforms, AI infrastructure, and adaptive learning products for teams that need production-ready delivery, clear scope, and fewer expensive surprises.
             </p>
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up">
               <a href={primaryContactHref}>
-                <Button size="lg" className="btn-gradient" aria-label="Get in touch">
+                <Button size="lg" className="btn-gradient" aria-label="Book a discovery call">
                   <Users className="mr-2 h-5 w-5" />
-                  Get in Touch
+                  Book a Discovery Call
                 </Button>
               </a>
-              <a href="#work" aria-label="See our work">
+              <a href="#work" aria-label="See what we build">
                 <Button variant="outline" size="lg">
                   <Code className="mr-2 h-5 w-5" />
-                  See Our Work
+                  See What We Build
                 </Button>
               </a>
             </div>
@@ -90,22 +90,22 @@ const Index = () => {
       <section className="py-16 border-b bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-3 text-gradient">High-Intent Buying Paths</h2>
+            <h2 className="text-3xl font-bold mb-3 text-gradient">Start with the path that matches your decision</h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Evaluate GIS system pricing, request an AI tool demo, or estimate adaptive learning platform cost with GIS analytics for teams in India and global markets.
+              Use pricing, use-case exploration, or a discovery call to move from vague interest to a scoped next step.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
             <Card className="card-hover h-full border-primary/20">
               <CardHeader>
-                <Badge variant="secondary" className="w-fit">Commercial Intent</Badge>
+                <Badge variant="secondary" className="w-fit">Budget Clarity</Badge>
                 <CardTitle className="text-2xl">GIS System Pricing</CardTitle>
-                <CardDescription>Understand fixed-scope and milestone pricing before technical discovery starts.</CardDescription>
+                <CardDescription>See how we scope fixed-sprint work, milestone builds, and early budget ranges before you commit engineering time.</CardDescription>
               </CardHeader>
               <CardContent>
                 <a href="/pricing" aria-label="Review GIS system pricing">
                   <Button variant="ghost" className="group p-0 h-auto text-primary">
-                    View Pricing Signals
+                    See Pricing Options
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </a>
@@ -114,14 +114,14 @@ const Index = () => {
 
             <Card className="card-hover h-full border-primary/20">
               <CardHeader>
-                <Badge variant="secondary" className="w-fit">Solution Fit</Badge>
+                <Badge variant="secondary" className="w-fit">System Fit</Badge>
                 <CardTitle className="text-2xl">Custom Geospatial AI Solutions</CardTitle>
-                <CardDescription>See where GIS, AI orchestration, and adaptive learning workflows intersect.</CardDescription>
+                <CardDescription>Review the systems we build when teams need GIS, AI orchestration, and adaptive learning to work together in production.</CardDescription>
               </CardHeader>
               <CardContent>
                 <a href="#work" aria-label="Explore custom geospatial AI solutions">
                   <Button variant="ghost" className="group p-0 h-auto text-primary">
-                    Explore Use Cases
+                    Review Use Cases
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </a>
@@ -130,14 +130,14 @@ const Index = () => {
 
             <Card className="card-hover h-full border-primary/20">
               <CardHeader>
-                <Badge variant="secondary" className="w-fit">Regional Demand</Badge>
+                <Badge variant="secondary" className="w-fit">Planning Call</Badge>
                 <CardTitle className="text-2xl">AI Tool Demo in India</CardTitle>
-                <CardDescription>Book an AI and GIS workflow demo with delivery planning for India and Kolkata teams.</CardDescription>
+                <CardDescription>Bring your deadline, current stack, and constraints. We will help you identify the fastest practical next step.</CardDescription>
               </CardHeader>
               <CardContent>
                 <a href="#contact" aria-label="Book AI tool demo">
                   <Button variant="ghost" className="group p-0 h-auto text-primary">
-                    Book a Demo
+                    Book the Call
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </a>
@@ -151,8 +151,8 @@ const Index = () => {
       <section id="work" className="py-24 bg-muted/50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">Our Platform Stack</h2>
-            <p className="text-xl text-muted-foreground">Production-ready infrastructure you can build on</p>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Platforms, systems, and infrastructure we can ship with you</h2>
+            <p className="text-xl text-muted-foreground">Reference products and internal platforms that show how we think about performance, reliability, and delivery.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -347,8 +347,8 @@ const Index = () => {
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">What We Build For You</h2>
-            <p className="text-xl text-muted-foreground">Custom software engineering for teams that can't afford slow, generic solutions</p>
+            <h2 className="text-4xl font-bold mb-4 text-gradient">What we build when the stakes are operational</h2>
+            <p className="text-xl text-muted-foreground">Custom engineering for teams that need working systems, explicit tradeoffs, and a faster path to production.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -356,7 +356,7 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Building className="h-6 w-6 text-primary" />
-                For Businesses
+                For Product and Operations Teams
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -401,7 +401,7 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Globe className="h-6 w-6 text-primary" />
-                For Public Sector & NGOs
+                For Public Sector, NGOs, and Regulated Programs
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -575,6 +575,67 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-24 border-t bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Research before you commit engineering time</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Compare options, review delivery examples, and inspect the technical resources behind our recommendations before you decide to scope a project.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Compare</Badge>
+                <CardTitle className="text-2xl">Compare your options</CardTitle>
+                <CardDescription>Use our comparison guides to evaluate platforms, frameworks, and service tradeoffs with the buying criteria that matter in production.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="/compare" aria-label="Open comparison guides">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Open Comparison Guides
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Case Studies</Badge>
+                <CardTitle className="text-2xl">Review delivery examples</CardTitle>
+                <CardDescription>See how we approach rollout pressure, performance bottlenecks, and reliability risk across GIS, AI, and learning systems.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="/case-studies" aria-label="Read case studies">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Read Case Studies
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="card-hover h-full border-primary/20">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit">Resources</Badge>
+                <CardTitle className="text-2xl">Do technical diligence</CardTitle>
+                <CardDescription>Browse the repos, references, and decision-support material that inform how we scope work and recommend implementation paths.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <a href="/resources" aria-label="Browse resources">
+                  <Button variant="ghost" className="group p-0 h-auto text-primary">
+                    Browse Resources
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6">
@@ -584,7 +645,7 @@ const Index = () => {
                 <HelpCircle className="h-8 w-8 text-primary" />
               </div>
               <h2 className="text-4xl font-bold mb-4 text-gradient">Frequently Asked Questions</h2>
-              <p className="text-xl text-muted-foreground">Everything you need to know about working with TARDIS Solutions</p>
+              <p className="text-xl text-muted-foreground">Answers for teams deciding whether to scope with us, compare options, or move directly into delivery.</p>
             </div>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
@@ -705,9 +766,9 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <Target className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">Want to Work with TARDIS Solutions?</h2>
+            <h2 className="text-4xl font-bold mb-6">Tell us what you need to ship next</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              We're always interested in meeting people working on interesting problems. Let's chat.
+              Share your system, timeline, and constraints. We will reply with a practical next step, not a generic sales sequence.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -731,7 +792,7 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-4 text-gradient">Ecosystem and Backlinks</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gradient">Further Reading</h2>
               <div className="flex flex-wrap gap-3 text-sm">
                 <a href="https://github.com/tardis-pro/scribe" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Scribe</a>
                 <a href="https://music.tardis.digital" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">music.tardis.digital</a>

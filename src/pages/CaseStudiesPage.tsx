@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -34,10 +35,9 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-accent/10" />
         <div className="relative container mx-auto px-6 py-20">
           <Badge variant="secondary" className="mb-4">Case Studies</Badge>
-          <h1 className="text-5xl font-bold mb-6 text-gradient">Delivery stories from real engineering constraints.</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gradient">Case studies for teams that need proof before they buy.</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Representative examples of how TARDIS Solutions approaches GIS performance, AI orchestration, adaptive learning,
-            and privacy-first platform reliability.
+            Review how we approach rollout pressure, performance bottlenecks, AI cost control, and platform reliability when the work has to hold up in production.
           </p>
         </div>
       </section>
@@ -46,19 +46,18 @@ export default function CaseStudiesPage() {
         <div className="container mx-auto px-6 max-w-5xl">
           <Card className="card-hover">
             <CardHeader>
-              <Badge variant="secondary" className="w-fit">Authority Theme</Badge>
-              <CardTitle>AI in Learning + GIS Analytics in Production</CardTitle>
+              <Badge variant="secondary" className="w-fit">How to read these</Badge>
+              <CardTitle>What these case studies are meant to answer</CardTitle>
               <CardDescription>
-                Decision-focused stories for teams evaluating adaptive e-learning with geospatial analytics in enterprise environments.
+                Can this team solve hard technical problems, reduce risk, and hand over systems that keep working after launch?
               </CardDescription>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground space-y-3">
               <p>
-                We publish implementation narratives that connect model behavior, geospatial context, and learning outcomes so buyers can
-                evaluate business impact before committing budget.
+                Each example pairs a concrete engineering challenge with the operational outcome it unlocked, so you can judge fit without decoding generic agency language.
               </p>
               <p>
-                Every case study emphasizes reliability, privacy safeguards, and long-term maintainability to support high-intent commercial decisions.
+                The emphasis is on systems that survive real usage: better reliability, lower waste, stronger rollout confidence, and clearer ownership after handoff.
               </p>
             </CardContent>
           </Card>
@@ -75,10 +74,28 @@ export default function CaseStudiesPage() {
                 <CardDescription>{study.challenge}</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">{study.outcome}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Outcome</p>
+                <p className="mt-2 text-sm text-muted-foreground">{study.outcome}</p>
               </CardContent>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section className="py-16 border-t text-center">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-4">Want to pressure-test your own delivery plan?</h2>
+          <p className="text-muted-foreground mb-6">
+            If these examples look close to your situation, compare options next or send us the system you need to stabilize, launch, or scale.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="/pricing">
+              <Button className="btn-gradient">See Pricing and Scope Options</Button>
+            </a>
+            <a href="/compare">
+              <Button variant="outline">Compare Options</Button>
+            </a>
+          </div>
         </div>
       </section>
     </main>

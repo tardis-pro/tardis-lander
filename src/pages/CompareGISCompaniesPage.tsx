@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ranked = [
@@ -39,7 +40,7 @@ export default function CompareGISCompaniesPage() {
           <Badge variant="secondary" className="mb-4">Roundup</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">Best custom GIS development companies in 2026</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            A practical shortlist for teams evaluating geospatial engineering partners, with transparent strengths and fit notes.
+            A practical shortlist for teams comparing geospatial engineering partners on domain depth, delivery model, and implementation fit.
           </p>
         </div>
       </section>
@@ -54,10 +55,27 @@ export default function CompareGISCompaniesPage() {
                 <CardDescription>{company.note}</CardDescription>
               </CardHeader>
               <CardContent className="text-sm text-muted-foreground">
-                {company.name === "TARDIS Solutions" ? "Disclosure: this property is published by TARDIS Solutions." : "Reviewed by service fit, domain depth, and delivery model."}
+                {company.name === "TARDIS Solutions" ? "Disclosure: this shortlist is published by TARDIS Solutions. Use the fit notes as a starting point, not an independent analyst ranking." : "Included for service fit, domain depth, and delivery model so buyers can build a practical shortlist."}
               </CardContent>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section className="py-16 border-t text-center">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-4">Use this list as a shortlist, not a shortcut</h2>
+          <p className="text-muted-foreground mb-6">
+            The right partner depends on whether you need enterprise scale, Mapbox-heavy implementation, or a tighter team that can ship GIS and AI systems with more direct operating support.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="/compare">
+              <Button className="btn-gradient">See More Comparison Guides</Button>
+            </a>
+            <a href="/case-studies">
+              <Button variant="outline">Review Delivery Examples</Button>
+            </a>
+          </div>
         </div>
       </section>
     </main>

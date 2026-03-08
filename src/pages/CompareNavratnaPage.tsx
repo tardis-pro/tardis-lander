@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function CompareNavratnaPage() {
@@ -15,8 +16,7 @@ export default function CompareNavratnaPage() {
           <Badge variant="secondary" className="mb-4">Comparison</Badge>
           <h1 className="text-5xl font-bold mb-6 text-gradient">Navratna vs CrewAI vs LangGraph</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            CrewAI and LangGraph are strong frameworks when teams can own deep platform engineering.
-            Navratna positions as a managed orchestration path for teams that need delivery velocity and operational support.
+            This comparison is for teams deciding whether they want framework flexibility with heavy internal ownership or a faster path to production with managed orchestration support.
           </p>
         </div>
       </section>
@@ -66,6 +66,23 @@ export default function CompareNavratnaPage() {
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+      </section>
+
+      <section className="py-16 border-t text-center">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-4">The practical buying question</h2>
+          <p className="text-muted-foreground mb-6">
+            If your team wants maximum framework control and can carry orchestration complexity internally, CrewAI or LangGraph may fit. If you need faster implementation, clearer ownership, and delivery help, Navratna is the stronger operational choice.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a href="/compare">
+              <Button className="btn-gradient">Review More Comparisons</Button>
+            </a>
+            <a href="/pricing">
+              <Button variant="outline">See Pricing Paths</Button>
+            </a>
+          </div>
         </div>
       </section>
     </main>
